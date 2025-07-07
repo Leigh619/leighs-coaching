@@ -9,44 +9,56 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/an%20image%20that%20symbol.png?raw=true');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #fff;
     }
+
     header {
       background: #4CAF50;
       color: white;
       padding: 2rem;
       text-align: center;
     }
+
     nav {
       background: #333;
       display: flex;
       justify-content: center;
     }
+
     nav a {
       color: white;
       padding: 1rem;
       text-decoration: none;
     }
+
     nav a:hover {
       background: #4CAF50;
     }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     .lead-magnet {
       background: #e0f7e9;
       padding: 1.5rem;
       border-radius: 8px;
       margin-top: 2rem;
     }
+
     .lead-magnet input[type="email"] {
       padding: 0.5rem;
       width: 60%;
       margin-right: 1rem;
     }
+
     .lead-magnet button {
       padding: 0.5rem 1rem;
       background: #4CAF50;
@@ -54,97 +66,165 @@
       border: none;
       cursor: pointer;
     }
+
     footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    form button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 4px solid #4CAF50;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #4CAF50;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #4CAF50;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    /* Hero Section Styles */
+    #hero {
+      background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/an%20image%20that%20symbol.png?raw=true');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      max-width: 700px;
+    }
+
+    #hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .hero-button:hover {
+      background-color: #3e9142;
+    }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Paste this below */
-form input,
-form textarea,
-form select {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-form button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button[type="submit"]:hover {
-  background-color: #45a049;
-}
-h1, h2, h3 {
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 4px solid #4CAF50;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-  color: #4CAF50;
-  position: relative;
-}
-
-h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #4CAF50;
-  margin-top: 0.5rem;
-  border-radius: 2px;
-}
-
-h3 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-body {
-  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/an%20image%20that%20symbol.png?raw=true'); /* Replace with your actual image path */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: #fff; /* Optional: makes text more readable */
+.hero-overlay {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* Start hidden */
 }
   </style>
 </head>
+
 <body>
+  <section id="hero">
+    <div class="hero-overlay">
+      <h1>Transform Your Body & Mind</h1>
+      <p>Personalised coaching for real, lasting change—backed by science, driven by results.</p>
+      <a href="#apply" class="hero-button">Apply Now</a>
+    </div>
+  </section>
+
+  <header>
+    <h1>Leigh's Coaching Services</h1>
+    <p><em>Transforming you for the better</em></p>
+  </header>
 
   <header>
     <h1>Leigh's Coaching Services</h1>
