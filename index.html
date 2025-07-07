@@ -290,10 +290,67 @@ body::before {
   margin-right: 0.75rem;
   display: inline-block;
 }
+
+#testimonials {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #fff;
+}
+
+#testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #4CAF50;
+}
+
+.testimonial-slider {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 150px;
+}
+
+.testimonial {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.testimonial.active {
+  opacity: 1;
+  position: relative;
+}
+
+.testimonial p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial span {
+  font-weight: bold;
+  color: #ccc;
+}
+
 </style>
 </head>
+<script>
+  let current = 0;
+  const testimonials = document.querySelectorAll('.testimonial');
+  const total = testimonials.length;
 
-<body>
+  setInterval(() => {
+    testimonials[current].classList.remove('active');
+    current = (current + 1) % total;
+    testimonials[current].classList.add('active');
+  }, 5000); // Change every 5 seconds
+</script>
+</body>
+
    </section>
 
   <nav>
@@ -355,6 +412,34 @@ body::before {
       <img src="https://github.com/Leigh619/leighs-coaching/blob/main/images/transform.jpg?raw=true" alt="Client Transformation 4" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
       <p><strong>1 Month</strong><br/>Lost 6kg of fat, gained muscle and strength, improved energy and self-confidence.</p>
     </div>
+
+<section id="testimonials">
+  <h2>What Clients Are Saying</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial active">
+      <p>"After a long period of struggle, I reached out to Leigh and BSF fitness for coaching. I needed a person to really get down and look at my journey from another perspective, which Leigh did wonderfully. Through this I was able to see the miscalculations in how I was approaching my diet and training. I was also provided with feedback that made total sense for my situation, everything was logical and science based. Very helpful and worth it. Would recommend. "</p>
+      <span>— Ranka</span>
+    </div>
+    <div class="testimonial">
+      <p>"Hi. I bought one of Leigh's meal plans and it's done wonders for me. Starting from anorexia a few years ago I managed to bulk up on plain chicken and plain rice for over 6 months religiously, nothing else. Just plain white rice and plain chicken breast and orange juice. I just couldn't bulk up anymore and I don't know how to cook either. so I messaged him. His plans are well designed for your needs and day to day free time for cooking as well as tailored for your specific goals. For me the recipes are very easy to make and honestly I didn't even know what 80% of those foods were before seeing them on my meal plan so I'm also learning recipes and cooking and variety. I didn't even know chia seeds existed. In just 2 weeks of full strict adherance to it I gained quality weight and I already did 2 PRs that I never thought I would do. He provides great support and honestly for the performance increase you're getting out of this, it's one of the best investments ever made considering the food is healthy and the portions are not HUGE. Hitting that sweet 225 bench soon! Highly "</p>
+      <span>— Andrei</span>
+    </div>
+    <div class="testimonial">
+      <p>"Leigh has been a big help for me getting back into working out and reaching my goals.
+ He helped me with some great meal ideas and tips concerning nutrition. I can ask him any question regarding vitamin supplements and be sure to receive an answer that's easy enough to understand.
+
+He has also been a great help in keeping me motivated and focused on my workout goals, giving me that push to success even on the days when motivation didn't come to me by itself.
+
+Life can be tough and that alone makes it hard to stick with working out, but Leigh is a great guy, he's got your back and helps you stick with it."p>
+      <span>— Ari</span>
+</div>
+
+    <div class="testimonial">
+      <p>"I have been getting back into my workout journey, and although I have been working out, I have not been eating the best. I reached out to him and he has been nothing but helpful. Takes the time to make sure that the meal plan fits something you can actually accomplish as well as keeping it budget friendly if need be. I have been following his meal plan with minor changes here and there to mix it up a bit and since I am a bigger guy, already lost 6-7 lbs in about a week and a Half. If you are hesitant about paying for the meal plan don't me, he actually takes his time to plan the meal within a week or 2. Highly recommend, meals arent bland either in case you are wondering. 10/10 will most hit him up for the personal 1x1 later down the road."p>
+   <span>— Anonymous</span>
+
+  </div>
+</section>
 
 </section>
 <section id="contact">
