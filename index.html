@@ -96,6 +96,43 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
   background-color: #45a049;
 }
+h1, h2, h3 {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 4px solid #4CAF50;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #4CAF50;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4CAF50;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
   </style>
 </head>
 <body>
@@ -167,7 +204,7 @@ form button[type="submit"]:hover {
 </section>
 <section id="contact">
   <h2>Contact me below</h2>
-  ...
+  
 
 <!-- WhatsApp Button -->
 <p style="text-align: center; margin-top: 2rem;">
