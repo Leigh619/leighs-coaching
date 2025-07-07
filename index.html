@@ -274,6 +274,17 @@ body::before {
   background-color: #4752c4;
 }
 
+#payment ul {
+  list-style: none;
+  padding: 0;
+}
+
+#payment li::before {
+  content: "✔";
+  color: #4CAF50;
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
 </style>
 </head>
 
@@ -402,15 +413,7 @@ body::before {
   <p>Once payment is made, please <a href="#contact">contact me</a> to confirm your booking.</p>
 </section>
 
-  <section class="lead-magnet">
-    <h3>🎁 Free Guide: 5-Day Low-Carb Vegetarian Meal Plan</h3>
-    <p>Get your free PDF and start your transformation today.</p>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">Send Me the Guide</button>
-    </form>
-  </section>
-
+ 
   <footer>
     <p>© 2025 Leigh's Coaching Services. All rights reserved.</p>
   </footer>
