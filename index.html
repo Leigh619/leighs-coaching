@@ -339,15 +339,17 @@ body::before {
 </style>
 </head>
 <script>
-  let current = 0;
-  const testimonials = document.querySelectorAll('.testimonial');
-  const total = testimonials.length;
+  document.addEventListener("DOMContentLoaded", function () {
+    let current = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    const total = testimonials.length;
 
-  setInterval(() => {
-    testimonials[current].classList.remove('active');
-    current = (current + 1) % total;
-    testimonials[current].classList.add('active');
-  }, 5000); // Change every 5 seconds
+    setInterval(() => {
+      testimonials[current].classList.remove('active');
+      current = (current + 1) % total;
+      testimonials[current].classList.add('active');
+    }, 5000);
+  });
 </script>
 </body>
 
