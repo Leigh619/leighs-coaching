@@ -16,9 +16,16 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  filter: brightness(0.5); /* Darkens the image */
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: -1;
+  pointer-events: none;
+}
     header {
       background: #4CAF50;
       color: white;
