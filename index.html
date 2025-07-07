@@ -149,38 +149,27 @@ form button[type="submit"]:hover {
 
 <section id="apply">
   <h2>Apply for Coaching</h2>
-  <p>If you're ready to take your training and nutrition to the next level, fill out the form below. I’ll review your responses and get back to you promptly.</p>
-  <form action="https://formspree.io/f/mdkzrnea" method="POST">
-    <label for="name">Full Name:</label><br/>
-    <input type="text" id="name" name="name" required><br/><br/>
+  <p>If you're ready to take your training and nutrition to the next level, click below to fill out the application form.</p>
 
-    <label for="whatsapp">WhatsApp Number:</label><br/>
-    <input type="tel" id="whatsapp" name="whatsapp" placeholder="+44..." required><br/><br/>
+  <button onclick="toggleForm()" style="background:#4CAF50; color:white; padding:0.75rem 1.5rem; border:none; border-radius:5px; font-size:1rem; cursor:pointer;">
+    📝 Open Application Form
+  </button>
 
-    <label for="discord">Discord Username (If you have discord):</label><br/>
-    <input type="text" id="discord" name="discord" placeholder="e.g. Bob1503"><br/><br/>
+  <div id="formContainer" style="display:none; margin-top:2rem;">
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <!-- Your full form fields go here -->
+      <!-- Example: -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
 
-    <label for="goals">What are your current fitness or physique goals?</label><br/>
-    <textarea id="goals" name="goals" rows="4" required></textarea><br/><br/>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="training">What does your current training routine look like?</label><br/>
-    <textarea id="training" name="training" rows="4"></textarea><br/><br/>
+      <!-- Add the rest of your form fields here -->
 
-    <label for="nutrition">Describe your current nutrition habits:</label><br/>
-    <textarea id="nutrition" name="nutrition" rows="4"></textarea><br/><br/>
-
-    <label for="challenges">What are your biggest challenges right now?</label><br/>
-    <textarea id="challenges" name="challenges" rows="4"></textarea><br/><br/>
-
-    <label for="preference">Do you prefer online or in-person coaching?</label><br/>
-    <select id="preference" name="preference">
-      <option value="online">Online</option>
-      <option value="in-person">In-Person</option>
-      <option value="either">Either</option>
-    </select><br/><br/>
-
-    <button type="submit">Submit Application</button>
-  </form>
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
 </section>
 
 <label for="preference">Do you prefer online or in-person coaching?</label><br/>
@@ -204,6 +193,11 @@ form button[type="submit"]:hover {
   <footer>
     <p>© 2025 Leigh's Coaching Services. All rights reserved.</p>
   </footer>
-
+<script>
+  function toggleForm() {
+    const form = document.getElementById("formContainer");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+  }
+</script>
 </body>
 </html>
