@@ -60,10 +60,7 @@ body::before {
     max-width: 100%;
   }
 
-  .dropdown-toggle {
-    font-size: 1rem;
-    padding: 0.75rem;
-  }
+  
 
   .dropdown-content {
     font-size: 0.95rem;
@@ -380,6 +377,21 @@ nav a {
 }
 
 
+/* Dropdown Styles */
+.dropdown-toggle {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  margin-top: 1rem; /* ✅ Adds spacing below the heading */
+}
 
 .dropdown-toggle:hover {
   background-color: #45a049;
@@ -394,6 +406,13 @@ nav a {
   border-radius: 0 0 4px 4px;
   color: #fff;
 }
+
+  /* Testimonial Dropdown */
+  .testimonial-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: left;
+  }
 
 
 .testimonial span {
@@ -488,33 +507,11 @@ nav a {
     text-align: left;
   }
 
-  .dropdown-toggle {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    font-size: 1.1rem;
-    border: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-  }
 
-  .dropdown-toggle:hover {
-    background-color: #45a049;
-  }
 
-  .dropdown-content {
-    display: none;
-    padding: 1rem;
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-    color: #fff;
-  }
+ 
+
+
 
   .testimonial {
     margin-bottom: 1.5rem;
