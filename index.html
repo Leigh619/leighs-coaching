@@ -418,15 +418,17 @@ nav a {
 </script>
 
 <script>
-  const toggle = document.querySelector('.dropdown-toggle');
-  const content = document.querySelector('.dropdown-content');
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.dropdown-toggle');
+    const content = document.querySelector('.dropdown-content');
 
-  toggle.addEventListener('click', () => {
-    const isOpen = content.style.display === 'block';
-    content.style.display = isOpen ? 'none' : 'block';
-    toggle.textContent = isOpen 
-      ? 'What Clients Are Saying ▾' 
-      : 'What Clients Are Saying ▴';
+    toggle.addEventListener('click', () => {
+      const isOpen = content.style.display === 'block';
+      content.style.display = isOpen ? 'none' : 'block';
+      toggle.textContent = isOpen 
+        ? 'What Clients Are Saying ▾' 
+        : 'What Clients Are Saying ▴';
+    });
   });
 </script>
 
