@@ -47,6 +47,22 @@ body::before {
     font-size: 1rem;
   }
 
+@media screen and (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+
+
   .section-heading {
     font-size: 1.5rem;
     margin: 1.5rem 1rem 1rem;
@@ -465,8 +481,8 @@ nav a {
       const isOpen = content.style.display === 'block';
       content.style.display = isOpen ? 'none' : 'block';
       toggle.textContent = isOpen 
-        ? 'CLick here to see what what clients Are saying ▾' 
-        : 'CLick here to see what what clients Are saying ▴';
+        ? 'Click here to see what what clients are saying ▾' 
+        : 'Click here to see what what clients are saying ▴';
     });
   });
 </script>
@@ -538,7 +554,7 @@ nav a {
     </div>
 
 <section id="testimonials" class="testimonial-section">
-  <button class="dropdown-toggle"> CLick here to see what what clients Are saying ▾</button>
+  <button class="dropdown-toggle"> Click here to see what what clients are saying ▾</button>
   <div class="dropdown-content">
     <div class="testimonial">
       <p>"After a long period of struggle, I reached out to Leigh and BSF fitness for coaching. I needed a person to really get down and look at my journey from another perspective, which Leigh did wonderfully. Through this I was able to see the miscalculations in how I was approaching my diet and training. I was also provided with feedback that made total sense for my situation, everything was logical and science based. Very helpful and worth it. Would recommend. "</p>
