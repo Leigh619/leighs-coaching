@@ -44,16 +44,16 @@ body::before {
   }
 }
 
- .section-heading {
+.section-heading {
   font-size: 2rem;
   margin: 2rem 0 1.25rem;
   text-align: left;
   color: #4CAF50;
   border-bottom: 3px solid #4CAF50;
-  display: inline-block;
+  display: inline-block; /* ✅ Keeps underline tight to text */
   padding-bottom: 0.5rem;
+  width: auto;            /* ✅ Prevents full-width underline */
 }
-
 
 
   iframe {
@@ -662,7 +662,7 @@ nav a {
 <!-- ✅ Testimonials section starts here -->
 <section id="testimonials" class="testimonial-section">
   <h2 class="section-heading">Testimonials</h2>
-<div style="height: 1rem;"></div>
+<div style="height: 1.5rem;"></div>
   <button class="dropdown-toggle">
     Click here to see what clients are saying ▾
   </button>
