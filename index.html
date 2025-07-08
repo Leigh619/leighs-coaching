@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <title>Leigh's Coaching Services</title>
   <style>
 
@@ -29,23 +29,6 @@ body::before {
   pointer-events: none;
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    padding: 1rem;
-    text-align: left;
-  }
-
-  .main-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-nav a {
-    display: block;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
 
 @media screen and (max-width: 600px) {
   .main-nav {
@@ -60,8 +43,6 @@ body::before {
     font-size: 1rem;
   }
 }
-
-
 
   .section-heading {
     font-size: 1.5rem;
@@ -80,7 +61,6 @@ body::before {
 
   .dropdown-content {
     font-size: 0.95rem;
-  }
 }
     header {
       background: #4CAF50;
@@ -358,38 +338,14 @@ body::before {
   color: #4CAF50;
 }
 
-.testimonial-slider {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-  overflow: hidden;
-  height: 400px;
-}
-
 .testimonial {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  width: 100%;
+  margin-bottom: 1.5rem;
   padding: 1rem;
   box-sizing: border-box;
 }
 
-.testimonial.active {
-  opacity: 1;
-  position: relative;
-}
 
-.testimonial p {
-  font-size: 1.2rem;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
 
-.testimonial span {
-  font-weight: bold;
-  color: #ccc;
-}
 
 nav ul {
   display: flex;
@@ -445,9 +401,6 @@ nav a {
   color: #fff;
 }
 
-.testimonial {
-  margin-bottom: 1.5rem;
-}
 
 .testimonial span {
   display: block;
@@ -456,6 +409,176 @@ nav a {
   color: #aaa;
 }
 
+
+  /* Base Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Space for fixed nav */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0e0e0e;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+    background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  /* Navigation */
+  .main-nav {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    border-bottom: 1px solid #222;
+  }
+
+  .main-nav a {
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+
+  .main-nav a:hover {
+    background: #4CAF50;
+  }
+
+  /* Section Headings */
+  .section-heading {
+    text-align: left;
+    color: #4CAF50;
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 3px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Iframe */
+  iframe {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    height: 1655px;
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  /* Back Link */
+  .back-link {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Testimonial Dropdown */
+  .testimonial-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: left;
+  }
+
+  .dropdown-toggle {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  .dropdown-toggle:hover {
+    background-color: #45a049;
+  }
+
+  .dropdown-content {
+    display: none;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    color: #fff;
+  }
+
+  .testimonial {
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial span {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #aaa;
+  }
+
+  /* Responsive Layout */
+  @media screen and (max-width: 600px) {
+    body {
+      padding-top: 64px;
+      font-size: 0.95rem;
+    }
+
+    .main-nav {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-nav a {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      font-size: 1rem;
+    }
+
+    .section-heading {
+      font-size: 1.5rem;
+      margin: 1.5rem 1rem 1rem;
+    }
+
+    iframe {
+      height: 1200px;
+      max-width: 100%;
+    }
+
+    .dropdown-toggle {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+
+    .dropdown-content {
+      font-size: 0.95rem;
+    }
+  }
 </style>
 </head>
 <script>
