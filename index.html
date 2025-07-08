@@ -356,6 +356,51 @@ nav a {
   font-weight: bold;
 }
 
+.testimonial-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.dropdown-toggle {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: #45a049;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  color: #fff;
+}
+
+.testimonial {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #aaa;
+}
+
 </style>
 </head>
 <script>
@@ -371,6 +416,20 @@ nav a {
     }, 5000);
   });
 </script>
+
+<script>
+  const toggle = document.querySelector('.dropdown-toggle');
+  const content = document.querySelector('.dropdown-content');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = content.style.display === 'block';
+    content.style.display = isOpen ? 'none' : 'block';
+    toggle.textContent = isOpen 
+      ? 'What Clients Are Saying ▾' 
+      : 'What Clients Are Saying ▴';
+  });
+</script>
+
 </body>
 
    </section>
