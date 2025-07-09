@@ -300,22 +300,6 @@ body::before {
   background-color: #4752c4;
 }
 
-#services ul {
-  list-style: none;
-  padding: 0;
-}
-
-#services li {
-  margin-bottom: 0.75rem; /* Adds space between bullets */
-}
-
-#services li::before {
-  content: "✔";
-  color: #4CAF50;
-  font-weight: bold;
-  margin-right: 0.75rem;
-  display: inline-block;
-}
 
 #testimonials {
   text-align: left;
@@ -546,6 +530,23 @@ nav a {
 
 /*Check mark columns (services*/
 
+#services ul {
+  list-style: none;
+  padding: 0;
+}
+
+#services li {
+  margin-bottom: 0.75rem; /* Adds space between bullets */
+}
+
+#services li::before {
+  content: "✔";
+  color: #4CAF50;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  display: inline-block;
+}
+
 .checkmark-columns {
   display: flex;
   justify-content: space-between;
@@ -618,20 +619,22 @@ nav a {
 <section id="services">
   <h2>Coaching Services</h2>
   <p>I offer 1-to-1 coaching—online or in-person if preferred—designed to help you reach your goals with clarity, structure, and support. Whether you're aiming to build an aesthetic physique, improve your health, or simply feel more confident in your body, I’ll guide you every step of the way.</p>
-  <ul>
-    <li>Improve your current nutrition with practical, sustainable strategies</li>
-    <li>Develop personalised meal plans and training programs tailored to your goals</li>
-    <li>Assess blood test results to add a deeper, more individualised layer to your plan</li>
-    <li>Weekly check-ins to track progress and adjust strategies as needed</li>
-    <li>Refine your form and technique to reduce injury risk and maximise results</li>
-</ul>
-<ul>
-    <li>Stay informed with up-to-date education on training, nutrition, and health</li>
-    <li>Debunk common fitness myths with evidence-based insights</li>
-    <li>Get your questions answered promptly and clearly—no guesswork</li>
- <li>Supplement guidance</li>
-  </ul>
-</div>
+
+  <div class="checkmark-columns">
+    <ul>
+      <li>✔ Improve your current nutrition with practical, sustainable strategies</li>
+      <li>✔ Develop personalised meal plans and training programs tailored to your goals</li>
+      <li>✔ Assess blood test results to add a deeper, more individualised layer to your plan</li>
+      <li>✔ Weekly check-ins to track progress and adjust strategies as needed</li>
+      <li>✔ Refine your form and technique to reduce injury risk and maximise results</li>
+    </ul>
+    <ul>
+      <li>✔ Stay informed with up-to-date education on training, nutrition, and health</li>
+      <li>✔ Debunk common fitness myths with evidence-based insights</li>
+      <li>✔ Get your questions answered promptly and clearly—no guesswork</li>
+      <li>✔ Supplement guidance</li>
+    </ul>
+  </div>
 </section>
 
 <section id="transformations">
