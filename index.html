@@ -351,41 +351,64 @@ nav a {
 }
 
 
-/* Dropdown Styles */
-.dropdown-toggle {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  font-size: 1.1rem;
-  border: none;
-  width: 30%;
-  text-align: center;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-  margin-top: 1.5rem; /* ⬅️ Increase spacing to separate from heading */
+/.Testimonial stuff./
+
+.testimonial-slider {
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
 }
 
-.dropdown-toggle:hover {
-  background-color: #45a049;
-}
-
-.dropdown-content {
+.testimonial {
   display: none;
-  padding: 1rem;
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  border-top: none;
-  border-radius: 0 0 4px 4px;
-  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-  /* Testimonial Dropdown */
-  .testimonial-section {
-    margin: auto;
-    text-align: left;
-  }
+.testimonial.active {
+  display: block;
+}
+
+.slider-controls {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.slider-controls button {
+  background-color: #444;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.slider-controls button:hover {
+  background-color: #333;
+}
+
+.testimonial {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+}
+
+.testimonial.active {
+  opacity: 1;
+  position: relative;
+}
+
+.testimonial-slider {
+  position: relative;
+  height: 200px; /* or adjust to fit content */
+}
 
 
 .testimonial span {
@@ -677,14 +700,8 @@ nav {
 </section>
 
 <!-- ✅ Testimonials section starts here -->
-<section id="testimonials" class="testimonial-section">
-  <h2 class="section-heading">Testimonials</h2>
-  <button class="dropdown-toggle">
-    Click here to see what clients are saying ▾
-  </button>
-
-  <div class="dropdown-content">
-    <div class="testimonial">
+<div class="testimonial-slider">
+  <div class="testimonial active">
    <p>"After a long period of struggle, I reached out to Leigh and BSF fitness for coaching. I needed a person to really get down and look at my journey from another perspective, which Leigh did wonderfully. Through this I was able to see the miscalculations in how I was approaching my diet and training. I was also provided with feedback that made total sense for my situation, everything was logical and science based. Very helpful and worth it. Would recommend. "</p>
       <span>— Ranka</span>
     </div>
@@ -694,11 +711,9 @@ nav {
     </div>
     <div class="testimonial">
       <p>"Leigh has been a big help for me getting back into working out and reaching my goals.
- He helped me with some great meal ideas and tips concerning nutrition. I can ask him any question regarding vitamin supplements and be sure to receive an answer that's easy enough to understand.
+ He helped me with some great meal ideas and tips concerning nutrition. I can ask him any question regarding vitamin supplements and be sure to receive an answer that's easy enough to understand. 
 
-He has also been a great help in keeping me motivated and focused on my workout goals, giving me that push to success even on the days when motivation didn't come to me by itself.
-
-Life can be tough and that alone makes it hard to stick with working out, but Leigh is a great guy, he's got your back and helps you stick with it."</p>
+He has also been a great help in keeping me motivated and focused on my workout goals, giving me that push to success even on the days when motivation didn't come to me by itself. Life can be tough and that alone makes it hard to stick with working out, but Leigh is a great guy, he's got your back and helps you stick with it."</p>
       <span>— Ari</span>
 </div>
 
@@ -707,7 +722,35 @@ Life can be tough and that alone makes it hard to stick with working out, but Le
    <span>— Anonymous</span>
  </div>
 </div>
+<div class="slider-controls">
+  <button id="prev">←</button>
+  <button id="next">→</button>
+</div>
 </section>
+
+<script>
+  const testimonials = document.querySelectorAll('.testimonial');
+  let currentIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      testimonial.classList.toggle('active', i === index);
+    });
+  }
+
+  document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  showTestimonial(currentIndex); // Show first on load
+</script>
+
 
 <section id="contact">
   <h2>Contact me below</h2>
@@ -716,6 +759,7 @@ Life can be tough and that alone makes it hard to stick with working out, but Le
   <a href="https://wa.me/447396640697" class="whatsapp-button" target="_blank">💬 Message Me on WhatsApp</a>
   <a href="https://discord.com/users/478858766951907329" class="discord-button" target="_blank">💬 Message Me on Discord</a>
 </div>
+
 
 </section>
 
