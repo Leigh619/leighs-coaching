@@ -363,7 +363,7 @@ nav a {
 .testimonial {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  position: absolute;
+  position: relative;
   width: 100%;
   text-align: center;
   padding: 2rem;
@@ -389,6 +389,7 @@ nav a {
 .testimonial-slider {
   position: relative;
   height: auto /* or adjust to fit content */
+  padding-bottom: 3rem;
 }
 
 
@@ -399,6 +400,16 @@ nav a {
   color: #aaa;
 }
 
+@media (max-width: 600px) {
+  .testimonial {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .testimonial-slider {
+    padding-bottom: 5rem; /* Slightly more spacing for small screens */
+  }
+}
 
   /* Base Styles */
   body {
