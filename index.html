@@ -361,13 +361,25 @@ nav a {
 }
 
 .testimonial {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
   text-align: center;
   padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+  border-radius: 10px;
   font-size: 1.1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); /* Safari support */
+  max-width: 1300px;
+  margin: auto;
+}
+
+.testimonial.active {
+  opacity: 1;
+  position: relative;
 }
 
 .testimonial.active {
@@ -380,7 +392,7 @@ nav a {
 }
 
 .slider-controls button {
-  background-color: #444;
+  background-color: #4CAF50;
   color: #fff;
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
@@ -393,12 +405,6 @@ nav a {
   background-color: #333;
 }
 
-.testimonial {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  width: 100%;
-}
 
 .testimonial.active {
   opacity: 1;
