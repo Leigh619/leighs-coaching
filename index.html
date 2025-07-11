@@ -341,8 +341,8 @@ nav a {
 /.Testimonial stuff./
 
 .testimonial-slider {
-  max-width: 600px;
-  margin: auto;
+  max-width: 880px;
+  margin: 2rem auto;
   position: relative;
   overflow: hidden;
 }
@@ -356,7 +356,8 @@ nav a {
 .testimonial {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  position: relative;
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   text-align: center;
   padding: 2rem;
@@ -365,11 +366,12 @@ nav a {
   font-size: 1.1rem;
   -webkit-backdrop-filter: blur(2px); /* Safari support */
   max-width: 1300px;
-  margin: auto;
+  box-sizing: border-box;
+
 }
 
-
 .testimonial.active {
+  display: block;       /* <- This overrides display: none */
   opacity: 1;
   position: relative;
 }
