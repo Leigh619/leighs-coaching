@@ -309,19 +309,6 @@ body::before {
   color: #fff;
 }
 
-#testimonials h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #4CAF50;
-}
-
-.testimonial {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-
 
 
 nav ul {
@@ -358,6 +345,12 @@ nav a {
   margin: auto;
   position: relative;
   overflow: hidden;
+}
+
+.testimonial.active {
+  display: block;       /* <- This overrides display: none */
+  opacity: 1;
+  position: relative;
 }
 
 .testimonial {
@@ -479,17 +472,6 @@ nav {
     text-decoration: underline;
   }
 
-
-
-
-
- 
-
-
-
-  .testimonial {
-    margin-bottom: 1.5rem;
-  }
 
   .testimonial span {
     display: block;
