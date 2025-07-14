@@ -573,6 +573,15 @@ nav {
       testimonials[current].classList.add('active');
     }, 5000);
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navButton = document.querySelector("#your-nav-button-id");
+  if (navButton) {
+    navButton.addEventListener("click", () => {
+      // your click logic here
+    });
+  }
+});
 </script>
 
 <script>
