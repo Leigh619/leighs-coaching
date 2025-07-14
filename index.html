@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>Leigh's Coaching Services</title>
+  <style>
 body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 18px;
@@ -441,7 +449,7 @@ nav a {
   .main-nav a:hover {
     background: #4CAF50;
   }
-
+ }
 
 
 
@@ -561,3 +569,191 @@ nav a {
   .checkmark-columns li {
     margin-bottom: 1rem;
   }
+
+</style>
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let current = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    const total = testimonials.length;
+
+    setInterval(() => {
+      testimonials[current].classList.remove('active');
+      current = (current + 1) % total;
+      testimonials[current].classList.add('active');
+    }, 5000);
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.dropdown-toggle');
+    const content = document.querySelector('.dropdown-content');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = content.style.display === 'block';
+      content.style.display = isOpen ? 'none' : 'block';
+      toggle.textContent = isOpen 
+        ? 'Click here to see what clients are saying ▾' 
+        : 'Click here to see what clients are saying ▴';
+    });
+  });
+</script>
+
+</body>
+
+   </section>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+  <a href="#testimonials">Testimonials</a>
+<a href="apply.html">Apply</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+  <h2>About Me</h2>
+  <p>I’m Leigh, a fitness coach who is very much into the science behind nutrition, hypertrophy (building muscle) and health with a huge passion for helping others achieve their goals.  Whether this be general fat loss, building muscle, improving sports performance and general health. My mission is to help people realise that they can do anything as long as if they employ the right strategies.</p>
+
+<p> My journey started as a runner at the age of 5-years old. I participated at the top level in the United Kingdom, racing all around England, setting local records in events like 5,000m for my age group in my teenage years. However, I stopped running due to injuries that I had, and got into lifting weights instead because I wanted to bulk up. Initially, I found this hard, but after some discipline (gained from my athletic background). I learned to understand what works and didn't work, suddenly I made some rapid progress. </p>
+
+<p> Later, I went to university to study Biomedical science in the pursuit to become a cancer research, as I had a keen passion for helping others and massive interest in cancer research. After graduating, I realised I wasn't so keen on working in a lab so I wanted to help to prevent cancer via raising awareness about the importance of nutrition. On top of this, nutrition helped me build lots of muscle, and it was the biggest issue for me when it came to making progress in the gym. Once I understood it, I was able to make that rapid progress that I described earlier. This lead me to doing my Master's degree in Sports Nutrition to become a qualified nutritionist. </p>
+
+<p> Since graduating with both degrees, I have coaching people to success in the pursuit of their goals. Teaching them what works, and what doesn't based on my own experiences and scientific understanding. My approach is holistic, which combines coaching training, nutrition, sleep, mindset, and health into one to produce sustainable long term results that last a lifetime. </p>
+</section>
+
+<section id="services">
+  <h2>Coaching Services</h2>
+  <p>I offer 1-to-1 coaching—online or in-person if preferred—designed to help you reach your goals with clarity, structure, and support. Whether you're aiming to build an aesthetic physique, improve your health, or simply feel more confident in your body, I’ll guide you every step of the way.</p>
+
+  <div class="checkmark-columns">
+    <ul>
+      <li> Improve your current nutrition with practical, sustainable strategies</li>
+      <li> Develop personalised meal plans and training programs tailored to your goals</li>
+      <li> Assess blood test results to add a deeper, more individualised guidance </li>
+      <li> Weekly check-ins to track progress and adjust strategies as needed</li>
+      <li> Refine your form and technique to reduce injury risk and maximise results</li>
+    </ul>
+    <ul>
+      <li> Stay informed with up-to-date education on training, nutrition, and health</li>
+      <li> Debunk common fitness myths with evidence-based insights</li>
+      <li> Get your questions answered promptly and clearly—no guesswork</li>
+      <li> Supplement guidance</li>
+<li> Optimise your sleep  </li>
+    </ul>
+  </div>
+</section>
+
+<section id="transformations">
+  <h2>Client Transformations</h2>
+  <p>These are just a few of the incredible results my clients have achieved through personalised coaching, evidence-based nutrition, and consistent support.</p>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;">
+    
+    <!-- Transformation 1 -->
+    <div style="flex: 1 1 320px; max-width: 400px; text-align: center;">
+      <img src="https://github.com/Leigh619/leighs-coaching/blob/main/images/Client_transformation_2.png?raw=true" alt="Client Transformation 1" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <p><strong>4 Months</strong><br/>Dropped body fat, gained lean muscle, and built lasting confidence.</p>
+    </div>
+
+    <!-- Transformation 2 -->
+    <div style="flex: 1 1 320px; max-width: 400px; text-align: center;">
+      <img src="https://github.com/Leigh619/leighs-coaching/blob/main/images/Client_transformation_7.png?raw=true" alt="Client Transformation 2" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <p><strong>Andrei – 1 Year</strong><br/>Improved energy, gained lean muscle, confidence, and strength.</p>
+    </div>
+
+    <!-- Transformation 3 -->
+    <div style="flex: 1 1 320px; max-width: 400px; text-align: center;">
+      <img src="https://github.com/Leigh619/leighs-coaching/blob/main/images/image.png?raw=true" alt="Client Transformation 3" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <p><strong>Daniel – 2 Years</strong><br/>Lost 70 lbs of fat, gained muscle mass and strength, improved self-confidence.</p>
+    </div>
+
+    <!-- Transformation 4 -->
+    <div style="flex: 1 1 320px; max-width: 400px; text-align: center;">
+      <img src="https://github.com/Leigh619/leighs-coaching/blob/main/images/transform.jpg?raw=true" alt="Client Transformation 4" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <p><strong>1 Month</strong><br/>Lost 6kg of fat, gained muscle and strength, improved energy and self-confidence.</p>
+    </div>
+</div>
+</section>
+
+<!-- ✅ Testimonials section starts here -->
+<div class="testimonial-slider">
+  <div class="testimonial active">
+   <p>"After a long period of struggle, I reached out to Leigh and BSF fitness for coaching. I needed a person to really get down and look at my journey from another perspective, which Leigh did wonderfully. Through this I was able to see the miscalculations in how I was approaching my diet and training. I was also provided with feedback that made total sense for my situation, everything was logical and science based. Very helpful and worth it. Would recommend. "</p>
+      <span>— Ranka</span>
+    </div>
+    <div class="testimonial">
+      <p>"Hi. I bought one of Leigh's meal plans and it's done wonders for me. Starting from anorexia a few years ago I managed to bulk up on plain chicken and plain rice for over 6 months religiously, nothing else. Just plain white rice and plain chicken breast and orange juice. I just couldn't bulk up anymore and I don't know how to cook either. so I messaged him. His plans are well designed for your needs and day to day free time for cooking as well as tailored for your specific goals. For me the recipes are very easy to make and honestly I didn't even know what 80% of those foods were before seeing them on my meal plan so I'm also learning recipes and cooking and variety. I didn't even know chia seeds existed. In just 2 weeks of full strict adherance to it I gained quality weight and I already did 2 PRs that I never thought I would do. He provides great support and honestly for the performance increase you're getting out of this, it's one of the best investments ever made considering the food is healthy and the portions are not HUGE. Hitting that sweet 225 bench soon! Highly "</p>
+      <span>— Andrei</span>
+    </div>
+    <div class="testimonial">
+      <p>"Leigh has been a big help for me getting back into working out and reaching my goals.
+ He helped me with some great meal ideas and tips concerning nutrition. I can ask him any question regarding vitamin supplements and be sure to receive an answer that's easy enough to understand. 
+
+He has also been a great help in keeping me motivated and focused on my workout goals, giving me that push to success even on the days when motivation didn't come to me by itself. Life can be tough and that alone makes it hard to stick with working out, but Leigh is a great guy, he's got your back and helps you stick with it."</p>
+      <span>— Ari</span>
+</div>
+
+    <div class="testimonial">
+      <p>"I have been getting back into my workout journey, and although I have been working out, I have not been eating the best. I reached out to him and he has been nothing but helpful. Takes the time to make sure that the meal plan fits something you can actually accomplish as well as keeping it budget friendly if need be. I have been following his meal plan with minor changes here and there to mix it up a bit and since I am a bigger guy, already lost 6-7 lbs in about a week and a Half. If you are hesitant about paying for the meal plan don't me, he actually takes his time to plan the meal within a week or 2. Highly recommend, meals arent bland either in case you are wondering. 10/10 will most hit him up for the personal 1x1 later down the road."
+   <span>— Anonymous</span>
+ </div>
+</div>
+</section>
+
+<script>
+  const testimonials = document.querySelectorAll('.testimonial');
+  let currentIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      testimonial.classList.toggle('active', i === index);
+    });
+  }
+
+  document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  showTestimonial(currentIndex); // Show first on load
+</script>
+
+
+<section id="contact">
+  <h2>Contact me below</h2>
+  
+<div class="contact-buttons">
+  <a href="https://wa.me/447396640697" class="whatsapp-button" target="_blank">💬 Message Me on WhatsApp</a>
+  <a href="https://discord.com/users/478858766951907329" class="discord-button" target="_blank">💬 Message Me on Discord</a>
+</div>
+
+
+</section>
+
+<section id="payment">
+  <h2>Secure Payment Options</h2>
+  </ul>
+<a href="https://buy.stripe.com/aEUg0xbKY6eYayY14h" class="hero-button">Pay Now</a>
+  <p>Once payment is made, please <a href="#contact">contact me</a> to confirm your booking.</p>
+</section>
+
+ 
+  <footer>
+    <p>© 2025 Leigh's Coaching Services. All rights reserved.</p>
+  </footer>
+<script>
+  function toggleForm() {
+    const form = document.getElementById("formContainer");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+  }
+</script>
+</body>
+</html>
