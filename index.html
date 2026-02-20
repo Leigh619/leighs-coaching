@@ -209,50 +209,83 @@ h3 {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  display: block;
-  align-items: center;
-  justify-content: center;
+  padding: 4rem 1.5rem; /* top/bottom padding */
   text-align: center;
   color: white;
-  padding: 0; /* remove extra padding so overlay controls spacing */
+  display: grid; /* use grid instead of flex or block */
+  place-items: start center; /* top-align vertically, center horizontally */
 }
 
 .hero-overlay {
   background: rgba(0, 0, 0, 0.6);
-  padding: 4rem 2rem; /* more spacing for readability */
+  padding: 3rem 2rem;
   border-radius: 8px;
-  max-width: 800px; /* keeps text from stretching too wide */
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* for fade-in */
 }
 
 #hero h1 {
-  font-size: 3rem; /* slightly bigger for readability */
-  margin-bottom: 1.5rem; /* more space below heading */
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  line-height: 1.2;
+  display: block; /* allow natural wrapping */
+  word-break: break-word; /* prevents overflow */
 }
 
 #hero p {
-  font-size: 1.25rem; /* slightly bigger */
+  font-size: 1.25rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
-  line-height: 1.6; /* prevent overlapping */
 }
 
 .hero-button {
   background-color: #4CAF50;
   color: white;
   padding: 0.75rem 1.5rem;
-  text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
   font-size: 1rem;
-  transition: background 0.3s ease;
-  display: inline-block; /* ensures proper sizing */
-  width: auto; /* allow button to fit text */
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
 }
 
 .hero-button:hover {
   background-color: #3e9142;
+}
+
+    /* Responsive adjustments */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .hero-overlay {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+
+  #hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-overlay {
+    padding: 1.5rem 1rem;
+  }
 }
 
 @keyframes fadeInUp {
@@ -796,6 +829,7 @@ He has also been a great help in keeping me motivated and focused on my workout 
 </body>
 
 </html>
+
 
 
 
