@@ -389,16 +389,22 @@ images/newbg.png
 
 nav ul {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
+  align-items: center;
+  gap: 20px; /* modern spacing */
+  padding: 12px 20px;
   margin: 0;
+  list-style: none;
+  flex-wrap: wrap; /* prevents cut-off on mobile */
 }
 
-nav li {
-  display: inline-block;
+nav li a {
+  color: #aaa; /* light grey text */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 nav a {
@@ -407,6 +413,14 @@ nav a {
   font-weight: bold;
 }
 
+nav li a:hover {
+  background: rgba(255,255,255,0.12); /* subtle hover */
+  color: #fff; /* brighter on hover */
+}
+
+
+
+    
 .testimonial-section {
   max-width: 1400px;
   margin: 2rem auto;
@@ -501,31 +515,56 @@ nav a {
 
   /* Navigation */
 
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #333;
-    width: 100%;
-    overflow-x: auto;
+/* NAV BAR */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #333;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+}
+
+/* NAV LIST */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  list-style: none;
+  margin: 0;
+}
+
+/* NAV LINKS */
+.main-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* HOVER */
+.main-nav a:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* MOBILE STACK */
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .main-nav a {
-    color: white;
-    padding: 1rem;
-    text-decoration: none;
-    font-weight: normal;
-    font-size: 1rem;
-    transition: background 0.3s ease;
+    width: 100%;
+    text-align: center;
   }
-
-  .main-nav a:hover {
-    background: #4CAF50;
-  }
- }
-
-
-
+}
 
 
   /* Section Headings */
@@ -574,19 +613,7 @@ nav a {
       font-size: 0.95rem;
     }
 
-    .main-nav {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .main-nav a {
-      display: block;
-      margin: 0.5rem 0;
-      padding: 0.75rem;
-      font-size: 1rem;
-    }
-
-
+   
 
     iframe {
       height: 1200px;
@@ -850,6 +877,7 @@ He has also been a great help in keeping me motivated and focused on my workout 
 </body>
 
 </html>
+
 
 
 
