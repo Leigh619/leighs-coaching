@@ -128,6 +128,17 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
+  
+footer .social-icon {
+    display: inline-block;
+    margin-top: 10px;
+    color: #aaa; /* default icon color */
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #4CAF50; /* your brand green */
+}
 
 form input,
 form textarea,
@@ -834,6 +845,20 @@ He has also been a great help in keeping me motivated and focused on my workout 
  
   <footer>
     <p>© 2025 Leigh's Coaching Services. All rights reserved.</p>
+    
+    <a href="https://www.instagram.com/YOUR_USERNAME" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Follow me on Instagram"
+   class="social-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         width="28" height="28" viewBox="0 0 24 24" fill="none" 
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+</a>
   </footer>
 <script>
   function toggleForm() {
@@ -844,6 +869,7 @@ He has also been a great help in keeping me motivated and focused on my workout 
 </body>
 
 </html>
+
 
 
 
