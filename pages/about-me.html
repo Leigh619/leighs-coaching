@@ -111,13 +111,6 @@ section {
   margin-right: 1rem;
 }
 
-.lead-magnet button {
-  padding: 0.5rem 1rem;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 
 footer {
   background: #333;
@@ -138,39 +131,6 @@ footer .social-icon:hover {
     color: #4CAF50; /* your brand green */
 }
 
-form input,
-form textarea,
-form select {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-form button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button[type="submit"]:hover {
-  background-color: #45a049;
-}
 
 h1,
 h2,
@@ -322,106 +282,6 @@ images/newbg.png
 }
 
 
-
-.whatsapp-button,
-.discord-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-  color: white;
-}
-
-.whatsapp-button {
-  background-color: #25D366;
-}
-
-.whatsapp-button:hover {
-  background-color: #1ebe5d;
-}
-
-.discord-button {
-  background-color: #5865F2;
-}
-
-.discord-button:hover {
-  background-color: #4752c4;
-}
-
-
-#testimonials {
-  text-align: left;
-  padding: 2rem 1rem;
-  color: #fff;
-}
-
-.testimonial-section {
-  max-width: 1400px;
-  margin: 2rem auto;
-  text-align: left;
-}
-
-
-.testimonial-slider {
-  max-width: 880px;
-  margin: 2rem auto;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.testimonial.active {
-  display: block;
-  /* <- This overrides display: none */
-  opacity: 1;
-  position: relative;
-}
-
-.testimonial {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  text-align: center;
-  padding: 2rem;
-  background-color: transparent;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  -webkit-backdrop-filter: blur(2px);
-  /* Safari support */
-  max-width: 800px;
-  box-sizing: border-box;
-
-}
-
-.testimonial.active {
-  display: block;
-  /* <- This overrides display: none */
-  opacity: 1;
-  position: relative;
-}
-
-.slider-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5x;
-}
-
-
-.testimonial span {
-  display: block;
-  margin-top: 4rem;
-  font-style: italic;
-  color: #aaa;
-}
-
 @media (max-width: 600px) {
   .testimonial {
     padding: 1.5rem;
@@ -536,15 +396,6 @@ nav {
   }
 
 
-  .testimonial span {
-    display: block;
-    margin-top: 0.5rem;
-    font-style: italic;
-    color: #aaa;
-  }
-
-
-
   /* Responsive Layout */
   @media screen and (max-width: 600px) {
     body {
@@ -570,19 +421,6 @@ nav {
   }
 
 
-  /*Check mark columns (services*/
-
-  #services ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  #services li {
-    margin-bottom: 1.25rem;
-    /* Adds space between bullets */
-  }
-
-
   .checkmark-columns {
     display: flex;
     flex-wrap: wrap;
@@ -590,13 +428,7 @@ nav {
     align-items: flex-start;
   }
 
-  #services li::before {
-    content: "✔";
-    color: #4CAF50;
-    font-weight: bold;
-    margin-right: 0.75rem;
-    display: inline-block;
-  }
+
 
   .checkmark-columns ul {
     flex: 1;
