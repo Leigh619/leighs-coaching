@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leigh Fitness Coaching Services</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZEXWTKBMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZEXWTKBMP');
+  </script>
+</head>
+
+<body>
+
+</body>
+</html>
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.70);
+  /* Dark overlay */
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+@media screen and (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+iframe {
+  height: 1200px;
+  /* Reduce height for smaller screens */
+  max-width: 100%;
+}
+
+
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+nav {
+  background: #333;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #4CAF50;
+}
+
+section {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.lead-magnet {
+  background: #e0f7e9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.lead-magnet input[type="email"] {
+  padding: 0.5rem;
+  width: 60%;
+  margin-right: 1rem;
+}
+
+.lead-magnet button {
+  padding: 0.5rem 1rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+  
+footer .social-icon {
+    display: inline-block;
+    margin-top: 10px;
+    color: #aaa; /* default icon color */
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #4CAF50; /* your brand green */
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #4CAF50;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4CAF50;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+images/newbg.png
+/* Hero Section Styles */
+#hero {
+  position: relative;
+  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 4rem 1.5rem; /* top/bottom padding */
+  text-align: center;
+  color: white;
+  display: grid;
+  place-items: center; /* fully center vertically and horizontally */
+}
+
+.hero-overlay {
+  background: none;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* for fade-in */
+}
+
+#hero h1 {
+  color: #4CAF50;
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block; /* allow natural wrapping */
+  word-break: break-word; /* prevents overflow */
+  overflow-wrap: break-word
+}
+
+#hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+}
+
+.hero-button:hover {
+  background-color: #3e9142;
+}
+
+    /* Responsive adjustments */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .hero-overlay {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+
+  #hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-overlay {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  /* Start hidden */
+}
+
+.discord-button {
+  display: inline-block;
+  background-color: #5865F2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+
+.cta-button {
+  display: inline-block;           /* makes padding and border work nicely */
+  padding: 0.75rem 1.5rem;        /* space inside the box */
+  border: 2px solid #4CAF50;      /* green border */
+  border-radius: 8px;              /* rounded corners */
+  color: #4CAF50;                  /* green text */
+  text-decoration: none;           /* remove underline */
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #4CAF50;       /* green background on hover */
+  color: white;                     /* text turns white */
+  cursor: pointer;
+}
+    
+.discord-button:hover {
+  background-color: #4752c4;
+}
+
+.contact-buttons {
+  flex: 1 1 200px;
+  gap: 1rem;
+  text-align: left;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.whatsapp-button,
+.discord-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  color: white;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+.discord-button {
+  background-color: #5865F2;
+}
+
+.discord-button:hover {
+  background-color: #4752c4;
+}
+
+
+#testimonials {
+  text-align: left;
+  padding: 2rem 1rem;
+  color: #fff;
+}
+
+.testimonial-section {
+  max-width: 1400px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+
+.testimonial-slider {
+  max-width: 880px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial.active {
+  display: block;
+  /* <- This overrides display: none */
+  opacity: 1;
+  position: relative;
+}
+
+.testimonial {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  -webkit-backdrop-filter: blur(2px);
+  /* Safari support */
+  max-width: 800px;
+  box-sizing: border-box;
+
+}
+
+.testimonial.active {
+  display: block;
+  /* <- This overrides display: none */
+  opacity: 1;
+  position: relative;
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5x;
+}
+
+
+.testimonial span {
+  display: block;
+  margin-top: 4rem;
+  font-style: italic;
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .testimonial {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Base Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0e0e0e;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+    background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  /* Navigation */
+/* NAV BAR */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #333;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  overflow-x: auto; /* prevents cut-off */
+}
+
+/* NAV LIST */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  list-style: none;
+  margin: 0;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+/* NAV LINKS */
+.main-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.6rem 0.9rem; /* slightly smaller for mobile fit */
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+  white-space: nowrap; /* keeps each link intact */
+}
+
+/* HOVER */
+.main-nav a:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* MOBILE STACK (optional, cleaner look) */
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+  /* Section Headings */
+
+
+  /* Iframe */
+  iframe {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    height: 1655px;
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  /* Back Link */
+  .back-link {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+
+  .testimonial span {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #aaa;
+  }
+
+
+
+  /* Responsive Layout */
+  @media screen and (max-width: 600px) {
+    body {
+      padding-top: 64px;
+      font-size: 0.95rem;
+    }
+
+   
+
+    iframe {
+      height: 1200px;
+      max-width: 100%;
+    }
+
+    .dropdown-toggle {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+
+    .dropdown-content {
+      font-size: 0.95rem;
+    }
+  }
+
+
+  /*Check mark columns (services*/
+
+  #services ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #services li {
+    margin-bottom: 1.25rem;
+    /* Adds space between bullets */
+  }
+
+
+  .checkmark-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  #services li::before {
+    content: "✔";
+    color: #4CAF50;
+    font-weight: bold;
+    margin-right: 0.75rem;
+    display: inline-block;
+  }
+
+  .checkmark-columns ul {
+    flex: 1;
+    min-width: 250px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .checkmark-columns li {
+    margin-bottom: 1rem;
+  }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K44KC62Z75"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K44KC62Z75');
+    
+</script>
+</head>
+
+  <section id="about">
+  <h2>About Me – Online Fitness Coach & Nutritionist</h2>
+  <p>I’m Leigh, a fitness coach who is very much into the science behind nutrition, hypertrophy (building muscle) and health with a huge passion for helping others achieve their goals.  Whether this be general fat loss, building muscle, improving sports performance and general health. My mission is to help people realise that they can do anything as long as if they employ the right strategies.</p>
+
+<p> My journey started as a runner at the age of 5-years old. I participated at the top level in the United Kingdom, racing all around England, setting local records in events like 5,000m for my age group in my teenage years. However, I stopped running due to injuries that I developed, and instead I started lifting weights because I wanted to bulk up and build muscle. Initially, I found this hard, but after some discipline (gained from my athletic background). I learned to understand what works and what didn't work, suddenly I made some rapid progress. </p>
+
+<p> Later, I went to university to study Biomedical science in the pursuit to become a cancer researcher, as I had a keen passion for helping others and massive interest in cancer research. After graduating, I realised I wasn't so keen on working in a lab so I wanted to help to prevent cancer via raising awareness about the importance of nutrition. On top of this, nutrition helped me build lots of muscle, and it was the biggest issue for me when it came to making progress in the gym. Once I understood it, I was able to make that rapid progress that I described earlier. This lead me to doing my Master's degree in Sports Nutrition to become a qualified nutritionist. </p>
+
+<p> Since graduating with both degrees, I have been coaching people to success in the pursuit of their goals. Teaching them what works, and what doesn't based on my own experiences and scientific understanding. My approach is holistic, which combines coaching training, nutrition, sleep, mindset, and health into one to produce sustainable long term results that last a lifetime. </p>
+</section>
+
+</body>
+</html>
