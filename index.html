@@ -50,6 +50,20 @@ body::before {
 }
 
 
+@media screen and (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
 iframe {
   height: 1200px;
   /* Reduce height for smaller screens */
@@ -64,7 +78,21 @@ header {
   text-align: center;
 }
 
+nav {
+  background: #333;
+  display: flex;
+  justify-content: center;
+}
 
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #4CAF50;
+}
 
 section {
   padding: 1.5rem;
@@ -245,7 +273,11 @@ images/newbg.png
   background-color: #3e9142;
 }
 
-
+    /* Responsive adjustments */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
 
   #hero p {
     font-size: 1rem;
@@ -254,8 +286,12 @@ images/newbg.png
   .hero-overlay {
     padding: 2rem 1.5rem;
   }
-    
-    
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 1.5rem;
+  }
 
   #hero p {
     font-size: 0.95rem;
@@ -424,7 +460,11 @@ images/newbg.png
   color: #aaa;
 }
 
-
+@media (max-width: 600px) {
+  .testimonial {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
 
   /* Base Styles */
   body {
@@ -449,19 +489,16 @@ images/newbg.png
   }
 
   /* Navigation */
-/* NAV BASE STYLES */
+/* NAV BAR */
 nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #333;
   width: 100%;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(6px);
-  overflow-x: auto;
+  overflow-x: auto; /* prevents cut-off */
 }
 
 /* NAV LIST */
@@ -473,7 +510,7 @@ nav {
   padding: 0.75rem 1rem;
   list-style: none;
   margin: 0;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
 /* NAV LINKS */
@@ -481,10 +518,10 @@ nav {
   color: #aaa;
   text-decoration: none;
   font-size: 1rem;
-  padding: 0.6rem 0.9rem;
+  padding: 0.6rem 0.9rem; /* slightly smaller for mobile fit */
   border-radius: 6px;
   transition: background 0.3s ease, color 0.3s ease;
-  white-space: nowrap;
+  white-space: nowrap; /* keeps each link intact */
 }
 
 /* HOVER */
@@ -493,8 +530,8 @@ nav {
   color: #fff;
 }
 
-/* MOBILE OVERRIDES */
-@media screen and (max-width: 600px) {
+/* MOBILE STACK (optional, cleaner look) */
+@media (max-width: 600px) {
   .main-nav {
     flex-direction: column;
     gap: 0.5rem;
@@ -506,39 +543,9 @@ nav {
   }
 }
 
-    @media screen and (max-width: 600px) {
-  .main-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 2rem;
-  }
-}
 
-@media (max-width: 480px) {
-  #hero h1 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .main-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    padding-top: 64px;
-    font-size: 0.95rem;
-  }
-}
-
+  /* Section Headings */
 
 
   /* Iframe */
@@ -577,8 +584,14 @@ nav {
 
 
 
+  /* Responsive Layout */
+  @media screen and (max-width: 600px) {
+    body {
+      padding-top: 64px;
+      font-size: 0.95rem;
+    }
 
-
+   
 
     iframe {
       height: 1200px;
@@ -634,31 +647,6 @@ nav {
   .checkmark-columns li {
     margin-bottom: 1rem;
   }
-  
-   #philosophy {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 1rem;
-}
-
-.philosophy-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-left: 4px solid #4CAF50;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-}
-
-.philosophy-item h3 {
-  margin-top: 0;
-  color: #4CAF50;
-  font-size: 1.6rem;
-}
-
-.philosophy-item p {
-  margin: 0.5rem 0 0;
-  line-height: 1.6;
-}
     </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K44KC62Z75"></script>
@@ -824,32 +812,6 @@ He has also been a great help in keeping me motivated and focused on my workout 
   showTestimonial(currentIndex); // Show first on load
 </script>
 
-  <section id="philosophy">
-  <h2>My Coaching Philosophy</h2>
-
-  <div class="philosophy-item">
-    <h3>🤝 Honesty</h3>
-    <p>I believe honesty between coach and client is essential. It keeps communication clear, builds trust, and creates the accountability needed for long‑term success.</p>
-  </div>
-
-  <div class="philosophy-item">
-    <h3>🎓 Education</h3>
-    <p>My goal is to teach you how training, nutrition, and the human body actually work. When you understand the “why” behind your plan, you become more independent, confident, and consistent.</p>
-  </div>
-
-  <div class="philosophy-item">
-    <h3>✨ Clarity</h3>
-    <p>Clear communication ensures we’re always aligned. When expectations and goals are understood on both sides, the entire process becomes smoother and more effective.</p>
-  </div>
-
-  <div class="philosophy-item">
-    <h3>🎯 Realism</h3>
-    <p>Setting realistic goals protects your mindset and keeps progress sustainable. Realistic targets build momentum, confidence, and long‑term adherence.</p>
-  </div>
-
-  <div class="philosophy-item">
-    <h3>🧬 Evidence‑Based Practice</h3>
-    <p>Everything I coach is grounded in current scientific evidence. No fads, no guesswork — just proven methods tailored to your goals.</p>
 
 <section id="contact">
   <h2>Contact me below</h2>
@@ -896,57 +858,6 @@ He has also been a great help in keeping me motivated and focused on my workout 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
