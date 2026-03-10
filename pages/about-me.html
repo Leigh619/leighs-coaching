@@ -40,13 +40,6 @@ body::before {
   pointer-events: none;
 }
 
-
-@media screen and (max-width: 600px) {
-  .main-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .main-nav a {
     display: block;
     margin: 0.5rem 0;
@@ -214,12 +207,39 @@ h2::after {
   background-color: #3e9142;
 }
 
-    /* Responsive adjustments */
+
+@media screen and (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media (max-width: 768px) {
   #hero h1 {
     font-size: 2rem;
   }
+}
 
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 64px;
+    font-size: 0.95rem;
+  }
+}
   #hero p {
     font-size: 1rem;
   }
@@ -228,11 +248,6 @@ h2::after {
     padding: 2rem 1.5rem;
   }
 }
-
-@media (max-width: 480px) {
-  #hero h1 {
-    font-size: 1.5rem;
-  }
 
   #hero p {
     font-size: 0.95rem;
@@ -264,12 +279,6 @@ h2::after {
   display: block;
 }
 
-
-@media (max-width: 600px) {
-  .testimonial {
-    padding: 1.5rem;
-    font-size: 1rem;
-  }
 
   /* Base Styles */
   body {
@@ -338,12 +347,6 @@ nav {
   color: #fff;
 }
 
-/* MOBILE STACK (optional, cleaner look) */
-@media (max-width: 600px) {
-  .main-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 
   .main-nav a {
     width: 100%;
@@ -383,12 +386,7 @@ nav {
 
 
   /* Responsive Layout */
-  @media screen and (max-width: 600px) {
-    body {
-      padding-top: 64px;
-      font-size: 0.95rem;
-    }
-
+ 
    
 
     iframe {
