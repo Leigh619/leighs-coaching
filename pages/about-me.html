@@ -40,11 +40,60 @@ body::before {
   pointer-events: none;
 }
 
+/* NAV BASE STYLES */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  overflow-x: auto;
+}
+
+/* NAV LIST */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  list-style: none;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+/* NAV LINKS */
+.main-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* HOVER */
+.main-nav a:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* MOBILE OVERRIDES */
+@media screen and (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .main-nav a {
-    display: block;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    font-size: 1rem;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -62,15 +111,6 @@ header {
   text-align: center;
 }
 
-nav a {
-  color: white;
-  padding: 1rem;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background: #4CAF50;
-}
 
 section {
   padding: 1.5rem;
@@ -300,57 +340,6 @@ h2::after {
     width: 90%;
     max-width: 900px;
     margin: auto;
-  }
-
-  /* Navigation */
-/* NAV BAR */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  background-color: #333;
-  width: 100%;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(6px);
-  overflow-x: auto; /* prevents cut-off */
-}
-
-/* NAV LIST */
-.main-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  list-style: none;
-  margin: 0;
-  flex-wrap: wrap; /* allows wrapping on small screens */
-}
-
-/* NAV LINKS */
-.main-nav a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 0.6rem 0.9rem; /* slightly smaller for mobile fit */
-  border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
-  white-space: nowrap; /* keeps each link intact */
-}
-
-/* HOVER */
-.main-nav a:hover {
-  background: #4CAF50;
-  color: #fff;
-}
-
-
-  .main-nav a {
-    width: 100%;
-    text-align: center;
   }
 
 
