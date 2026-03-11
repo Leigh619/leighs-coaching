@@ -12,7 +12,33 @@
   </script>
 
 
-  
+  nav {
+  background: #333;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #4CAF50;
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
 <style>
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -68,29 +94,33 @@ nav {
 }
 
 /* NAV LINKS */
-.main-nav a {
-  color: #aaa;
+nav {
+  background: #333;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
   text-decoration: none;
-  font-size: 1rem;
-  padding: 0.6rem 0.9rem;
-  border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
-  white-space: nowrap;
 }
 
-/* HOVER */
-.main-nav a:hover {
+nav a:hover {
   background: #4CAF50;
-  color: #fff;
 }
 
-
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
   .main-nav a {
     width: 100%;
     text-align: center;
   }
-
+}
 iframe {
   height: 1200px;
   /* Reduce height for smaller screens */
