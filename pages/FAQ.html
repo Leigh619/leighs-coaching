@@ -25,7 +25,6 @@
 
   <title>Frequently Asked Questions</title>
 
-  <!-- Your CSS (unchanged except for removing broken parts) -->
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -43,16 +42,21 @@
 
     p { 
       font-size: 20px; 
-      }
+      line-height: 1.6;
+    }
 
     h2 {
-      font-size: 20px;
+      font-size: 26px;
       color: #4CAF50;
       margin-top: 2.5rem;
       margin-bottom: 0.5rem;
     }
 
-    h1 { font-size: 2rem;
+    h1 { 
+      font-size: 2rem;
+      color: #4CAF50;
+      margin-bottom: 2rem;
+    } /* ← FIXED: this bracket was missing */
 
     .main-nav {
       background: #333;
@@ -76,19 +80,20 @@
     .main-nav a:hover {
       background: #4CAF50;
     }
-    
-.faq-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: left; /* or center if you prefer */
-}
-    
+
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: left;
+    }
+
     .overlay {
       background-color: rgba(0, 0, 0, 0.6);
       min-height: 100vh;
       width: 100%;
       padding-top: 80px;
+      box-sizing: border-box;
     }
 
     .back-link {
@@ -108,7 +113,6 @@
 
 <body>
 
-  <!-- NAVIGATION -->
   <nav class="main-nav">
     <a href="../index.html#about">About</a>
     <a href="../index.html#services">Services</a>
@@ -118,40 +122,42 @@
   </nav>
 
   <div class="overlay">
- <div class="faq-container">
-    <h2>1. What results can I expect from coaching?</h2>
-    <p>Most clients see improvements in strength, physique, and energy within the first 4–6 weeks...</p>
+    <div class="faq-container">
 
-    <h2>2. Do I need gym experience to start?</h2>
-    <p>No. Many clients begin as complete beginners...</p>
+      <h2>1. What results can I expect from coaching?</h2>
+      <p>Most clients see improvements in strength, physique, and energy within the first 4–6 weeks...</p>
 
-    <h2>3. How does online coaching work?</h2>
-    <p>You get a personalised training plan, nutrition guidance, weekly check-ins...</p>
+      <h2>2. Do I need gym experience to start?</h2>
+      <p>No. Many clients begin as complete beginners...</p>
 
-    <h2>4. What’s included in the coaching?</h2>
-    <p>✅ Custom training programme<br>
-       ✅ Nutrition guidance<br>
-       ✅ Weekly check-ins<br>
-       ...</p>
+      <h2>3. How does online coaching work?</h2>
+      <p>You get a personalised training plan, nutrition guidance, weekly check-ins...</p>
 
-    <h2>5. Do I need to track calories?</h2>
-    <p>Not unless you want to...</p>
+      <h2>4. What’s included in the coaching?</h2>
+      <p>✅ Custom training programme<br>
+         ✅ Nutrition guidance<br>
+         ✅ Weekly check-ins<br>
+         ...</p>
 
-    <h2>6. How long do I need to commit?</h2>
-    <p>Most clients stay 5+ months...</p>
+      <h2>5. Do I need to track calories?</h2>
+      <p>Not unless you want to...</p>
 
-    <h2>7. What if I have injuries or limitations?</h2>
-    <p>Your programme is adapted around any injuries...</p>
+      <h2>6. How long do I need to commit?</h2>
+      <p>Most clients stay 5+ months...</p>
 
-    <h2>8. How do payments work?</h2>
-    <p>Payments are taken monthly...</p>
+      <h2>7. What if I have injuries or limitations?</h2>
+      <p>Your programme is adapted around any injuries...</p>
 
-    <h2>9. Will you help with nutrition as well as training?</h2>
-    <p>Yes — you get evidence-based nutrition guidance...</p>
+      <h2>8. How do payments work?</h2>
+      <p>Payments are taken monthly...</p>
 
-    <h2>10. How do I get started?</h2>
-    <p>Fill out the short form and I’ll contact you...</p>
+      <h2>9. Will you help with nutrition as well as training?</h2>
+      <p>Yes — you get evidence-based nutrition guidance...</p>
 
+      <h2>10. How do I get started?</h2>
+      <p>Fill out the short form and I’ll contact you...</p>
+
+    </div>
   </div>
 
 </body>
