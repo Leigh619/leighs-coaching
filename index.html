@@ -174,83 +174,53 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
   background-color: #45a049;
 }
-
-h1,
-h2,
-h3 {
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-}
-
-h2 {
-  font-size: 20px;
-  color: #4CAF50;
-  position: relative;
-}
-
-h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #4CAF50;
-  margin-top: 0.5rem;
-  border-radius: 2px;
-}
-
-h3 {
-  font-size: 1.5rem;
-  color: #333;
-}
-images/newbg.png
-/* Hero Section Styles */
 #hero {
   position: relative;
   background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png');
   background-size: cover;
-  background-position: center;
+  background-position: 40% center; /* shifts image slightly for visual balance */
   min-height: 100vh;
-  padding: 4rem 1.5rem; /* top/bottom padding */
+  padding: 4rem 1.5rem;
+  display: grid;
+  place-items: center;
   text-align: center;
   color: white;
-  display: grid;
-  place-items: center; /* fully center vertically and horizontally */
+}
+
+/* Subtle overlay for readability */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
 }
 
 .hero-overlay {
-  background: none;
-  padding: 3rem 2rem;
-  text-align: center;
-  border-radius: 8px;
-  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
+  padding: 2rem;
   animation: fadeInUp 1s ease-out forwards;
-  opacity: 0; /* for fade-in */
+  opacity: 0;
 }
 
-.hero-title {
- max-width: 1200px;
-    margin: 0 auto 1rem;
-    text-align: center;
-    font-size: clamp(3.5rem, 7vw, 6rem);
-    line-height: 1.05;
-    font-weight: 800;
-    color: #fff;
+/* HERO TITLE — overrides global h1 */
+h1.hero-title {
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  display: block;
+  padding-bottom: 0;
 }
 
-.hero-title span {
+h1.hero-title span {
   display: block;
   color: #4CAF50;
 }
