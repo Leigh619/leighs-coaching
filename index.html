@@ -23,76 +23,31 @@
 <link rel="canonical" href="https://fitbyleigh.com/">
   
   <style>
+/* ------------------------------
+   GLOBAL BASE (MOBILE FIRST)
+------------------------------ */
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 18px;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
   color: #fff;
   background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-attachment: scroll; /* mobile-friendly */
 }
 
+/* Dark overlay */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.30);
-  /* Dark overlay */
+  inset: 0;
+  background: rgba(0,0,0,0.30);
   z-index: -1;
   pointer-events: none;
-}
-
-
-@media screen and (max-width: 600px) {
-  .main-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-nav a {
-    display: block;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
-}
-
-iframe {
-  height: 1200px;
-  /* Reduce height for smaller screens */
-  max-width: 100%;
-}
-
-
-header {
-  background: #4CAF50;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
-
-nav {
-  background: #333;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; 
-}
-
-nav a {
-  color: white;
-  padding: 1rem;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background: #4CAF50;
 }
 
 section {
@@ -101,93 +56,59 @@ section {
   margin: auto;
 }
 
-.lead-magnet {
-  background: #e0f7e9;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 2rem;
-}
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
 
-.lead-magnet input[type="email"] {
-  padding: 0.5rem;
-  width: 60%;
-  margin-right: 1rem;
-}
-
-.lead-magnet button {
-  padding: 0.5rem 1rem;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-footer {
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-  
-footer .social-icon {
-    display: inline-block;
-    margin-top: 10px;
-    color: #aaa; /* default icon color */
-    transition: color 0.3s ease;
-}
-
-footer .social-icon:hover {
-    color: #4CAF50; /* your brand green */
-}
-
-form input,
-form textarea,
-form select {
   width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
 }
 
-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.25rem;
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  list-style: none;
+  margin: 0;
 }
 
-form button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.main-nav a {
+  color: #aaa;
+  text-decoration: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  text-align: center;
+  transition: 0.3s ease;
 }
 
-form button[type="submit"]:hover {
-  background-color: #45a049;
+.main-nav a:hover {
+  background: #4CAF50;
+  color: #fff;
 }
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+
 #hero {
   position: relative;
-  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png');
-  background-size: cover;
-  background-position: 40% center; /* shifts image slightly for visual balance */
   min-height: 100vh;
   padding: 4rem 1.5rem;
   display: grid;
   place-items: center;
   text-align: center;
-  color: white;
+  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+  background-size: cover;
+  background-position: 40% center;
 }
 
-/* Subtle overlay for readability */
 #hero::before {
   content: "";
   position: absolute;
@@ -201,441 +122,172 @@ form button[type="submit"]:hover {
   z-index: 2;
   max-width: 900px;
   width: 100%;
-  margin: 0 auto;
   padding: 2rem;
+  opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
-  opacity: 1;
 }
 
-/* HERO TITLE — overrides global h1 */
 h1.hero-title {
-  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-size: clamp(2.2rem, 7vw, 6rem);
   font-weight: 800;
   line-height: 1.05;
-  color: #fff;
   margin-bottom: 1rem;
-  text-transform: none;
-  letter-spacing: 0;
-  display: block;
-  padding-bottom: 0;
 }
 
 h1.hero-title span {
-  display: block;
   color: #4CAF50;
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.9);
 }
 
 .cta-button {
-  display: inline-block;           /* makes padding and border work nicely */
-  padding: 0.75rem 1.5rem;        /* space inside the box */
-  border: 2px solid #4CAF50;      /* green border */
-  border-radius: 8px;              /* rounded corners */
-  color: #4CAF50;                  /* green text */
-  text-decoration: none;           /* remove underline */
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  color: #4CAF50;
   font-weight: bold;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #ffffff;
+  background: #fff;
   color: #4CAF50;
-  font-weight: 600;
-}
-    
-#hero p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
 }
 
-.hero-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 1rem;
-  display: inline-block;
-  width: auto;
-  text-decoration: none;
-}
-
-.hero-button:hover {
-  background-color: #3e9142;
-}
-
-    /* Responsive adjustments */
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 2rem;
-  }
-
-  #hero p {
-    font-size: 1rem;
-  }
-
-  .hero-overlay {
-    padding: 2rem 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #hero h1 {
-    font-size: 1.5rem;
-  }
-
-  #hero p {
-    font-size: 0.95rem;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-overlay {
-  animation: fadeInUp 1s ease-out forwards;
-  opacity: 0;
-  /* Start hidden */
-}
-
-.discord-button {
-  display: inline-block;
-  background-color: #5865F2;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-  margin-top: 1rem;
-}
-
-
-.cta-button:hover {
-  background: #ffffff;
-  color: #4CAF50;
-  font-weight: 600;
-}
-    
-.discord-button:hover {
-  background-color: #4752c4;
-}
-
-.contact-buttons {
-  flex: 1 1 200px;
-  gap: 1rem;
-  text-align: left;
-  justify-content: left;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
+/* ------------------------------
+   BUTTONS (WhatsApp, Discord)
+------------------------------ */
 
 .whatsapp-button,
 .discord-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
   border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
   color: white;
+  transition: 0.3s ease;
 }
 
-.whatsapp-button {
-  background-color: #25D366;
-}
+.whatsapp-button { background: #25D366; }
+.whatsapp-button:hover { background: #1ebe5d; }
 
-.whatsapp-button:hover {
-  background-color: #1ebe5d;
-}
+.discord-button { background: #5865F2; }
+.discord-button:hover { background: #4752c4; }
 
-.discord-button {
-  background-color: #5865F2;
-}
-
-.discord-button:hover {
-  background-color: #4752c4;
-}
-
+/* ------------------------------
+   TESTIMONIALS
+------------------------------ */
 
 #testimonials {
-  text-align: left;
   padding: 2rem 1rem;
-  color: #fff;
-}
-
-.testimonial-section {
-  max-width: 1400px;
-  margin: 2rem auto;
   text-align: left;
 }
-
 
 .testimonial-slider {
   max-width: 880px;
   margin: 2rem auto;
   position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.testimonial.active {
-  display: block;
-  /* <- This overrides display: none */
-  opacity: 1;
-  position: relative;
 }
 
 .testimonial {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  text-align: center;
   padding: 2rem;
-  background-color: transparent;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  -webkit-backdrop-filter: blur(2px);
-  /* Safari support */
-  max-width: 800px;
-  box-sizing: border-box;
-
+  text-align: center;
+  transition: opacity 0.5s ease;
 }
 
 .testimonial.active {
-  display: block;
-  /* <- This overrides display: none */
   opacity: 1;
   position: relative;
 }
 
-.slider-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5x;
-}
-
-
 .testimonial span {
   display: block;
-  margin-top: 4rem;
+  margin-top: 1rem;
+  color: #aaa;
   font-style: italic;
-  color: #aaa;
 }
 
-@media (max-width: 600px) {
-  .testimonial {
-    padding: 1.5rem;
-    font-size: 1rem;
-  }
+/* ------------------------------
+   FORMS
+------------------------------ */
 
-  /* Base Styles */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #0e0e0e;
-    color: #fff;
-    font-size: 1rem;
-    width: 100%;
-    background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-  }
-
-  .container {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-  }
-
-  /* Navigation */
-/* NAV BAR */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #333;
+form input,
+form textarea,
+form select {
   width: 100%;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(6px);
-  overflow-x: auto; /* prevents cut-off */
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-/* NAV LIST */
-.main-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  list-style: none;
-  margin: 0;
-  flex-wrap: wrap; /* allows wrapping on small screens */
-}
-
-/* NAV LINKS */
-.main-nav a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 0.6rem 0.9rem; /* slightly smaller for mobile fit */
-  border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
-  white-space: nowrap; /* keeps each link intact */
-}
-
-/* HOVER */
-.main-nav a:hover {
+form button[type="submit"] {
   background: #4CAF50;
-  color: #fff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* MOBILE STACK (optional, cleaner look) */
-@media (max-width: 600px) {
+form button[type="submit"]:hover {
+  background: #45a049;
+}
+
+/* ------------------------------
+   ANIMATIONS
+------------------------------ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------
+   MEDIA QUERIES
+------------------------------ */
+
+/* TABLET */
+@media (min-width: 600px) {
   .main-nav {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .main-nav a {
-    width: 100%;
-    text-align: center;
+  .hero-subtitle {
+    font-size: 1.4rem;
   }
 }
 
-
-
-  /* Section Headings */
-
-
-  /* Iframe */
-  iframe {
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    width: 100%;
-    height: 1655px;
-    display: block;
-    margin: 0 auto;
-    max-width: 900px;
+/* DESKTOP */
+@media (min-width: 900px) {
+  body {
+    background-attachment: fixed;
   }
 
-  /* Back Link */
-  .back-link {
-    display: block;
-    text-align: center;
-    margin: 2rem auto;
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: bold;
+  .hero-subtitle {
+    font-size: 1.6rem;
   }
+}
 
-  .back-link:hover {
-    text-decoration: underline;
-  }
-
-
-  .testimonial span {
-    display: block;
-    margin-top: 0.5rem;
-    font-style: italic;
-    color: #aaa;
-  }
-
-
-
-  /* Responsive Layout */
-  @media screen and (max-width: 600px) {
-    body {
-      padding-top: 64px;
-      font-size: 0.95rem;
-    }
-
-   
-
-    iframe {
-      height: 1200px;
-      max-width: 100%;
-    }
-
-    .dropdown-toggle {
-      font-size: 1rem;
-      padding: 0.75rem;
-    }
-
-    .dropdown-content {
-      font-size: 0.95rem;
-    }
-  }
-
-
-  /*Check mark columns (services*/
-
-  #services ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  #services li {
-    margin-bottom: 1.25rem;
-    /* Adds space between bullets */
-  }
-
-
-  .checkmark-columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-
-  #services li::before {
-    content: "✔";
-    color: #4CAF50;
-    font-weight: bold;
-    margin-right: 0.75rem;
-    display: inline-block;
-  }
-
-  .checkmark-columns ul {
-    flex: 1;
-    min-width: 250px;
-    list-style: none;
-    padding: 0;
-  }
-
-  .checkmark-columns li {
-    margin-bottom: 1rem;
-  }
     </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K44KC62Z75"></script>
