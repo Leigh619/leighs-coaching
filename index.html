@@ -144,6 +144,23 @@ h1.hero-title span {
   color: rgba(255,255,255,0.9);
 }
 
+    .hero-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #3e9142;
+}
+
+
 .cta-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -180,6 +197,14 @@ h1.hero-title span {
 
 .discord-button { background: #5865F2; }
 .discord-button:hover { background: #4752c4; }
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
 
 /* ------------------------------
    TESTIMONIALS
@@ -244,6 +269,18 @@ form button[type="submit"] {
 
 form button[type="submit"]:hover {
   background: #45a049;
+}
+
+    footer .social-icon {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #aaa;
+  transition: 0.3s ease;
+}
+
+footer .social-icon:hover {
+  color: #4CAF50;
 }
 
 /* ------------------------------
@@ -337,13 +374,16 @@ form button[type="submit"]:hover {
    </section>
 
   <nav>
+   <nav>
+  <div class="main-nav">
     <a href="pages/about-me.html">About Me</a>
     <a href="#services">Services</a>
-  <a href="#testimonials">Testimonials</a>
-<a href="apply.html">Apply</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="apply.html">Apply</a>
     <a href="#contact">Contact</a>
-  <a href="pages/FAQ.html">FAQ</a>
-  </nav>
+    <a href="pages/FAQ.html">FAQ</a>
+  </div>
+</nav>
   
 <section id="hero">
   <div class="hero-overlay">
@@ -479,7 +519,7 @@ He has also been a great help in keeping me motivated and focused on my workout 
 <section id="payment">
   <h2>Secure Payment Options</h2>
   </ul>
-<a href="https://buy.stripe.com/aEUg0xbKY6eYayY14h" class="hero-button">Pay Now</a>
+<a href="..." class="hero-button">Pay Now</a>
   <p>Once payment is made, please <a href="#contact">contact me</a> to confirm your booking.</p>
 </section>
 
