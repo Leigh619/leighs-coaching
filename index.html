@@ -90,6 +90,79 @@ section p {
 /* ------------------------------
    NAVIGATION
 ------------------------------ */
+/* ------------------------------
+   GLOBAL BASE (MOBILE FIRST)
+------------------------------ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* mobile-friendly */
+}
+
+/* Dark overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.30);
+  z-index: -1;
+  pointer-events: none;
+}
+
+section {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ------------------------------
+   SECTION ALIGNMENT
+------------------------------ */
+
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+section p {
+  text-align: center;
+}
+
+/* SERVICES ALIGNMENT FIX */
+#services {
+  text-align: center;
+}
+
+#services .checkmark-columns {
+  justify-content: center;
+  gap: 3rem; /* spacing between columns */
+}
+
+#services ul {
+  text-align: left; /* fixes weird centered bullet text */
+  margin: 0 auto;
+}
+
+#services li {
+  margin-bottom: 1rem; /* cleaner spacing */
+}
+
+/* PAYMENT SECTION FIX */
+#payment {
+  text-align: center;
+}
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
 
 nav {
   position: sticky;
@@ -380,6 +453,7 @@ footer .social-icon:hover {
     font-size: 1.6rem;
   }
 }
+
 
     </style>
 <!-- Google tag (gtag.js) -->
