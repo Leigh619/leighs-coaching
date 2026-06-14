@@ -27,6 +27,10 @@
    GLOBAL BASE (MOBILE FIRST)
 ------------------------------ */
 
+/* ------------------------------
+   GLOBAL BASE (MOBILE FIRST)
+------------------------------ */
+
 body {
   margin: 0;
   padding: 0;
@@ -55,17 +59,11 @@ section {
   max-width: 1400px;
   margin: auto;
 }
-    
-    /* SERVICES ALIGNMENT FIX */
-#services {
-  text-align: center;
-}
 
-#services .checkmark-columns {
-  justify-content: center;
-}
+/* ------------------------------
+   SECTION ALIGNMENT
+------------------------------ */
 
-    /* Section heading + paragraph alignment */
 section h2 {
   text-align: center;
   margin-bottom: 1rem;
@@ -74,6 +72,21 @@ section h2 {
 section p {
   text-align: center;
 }
+
+/* SERVICES ALIGNMENT FIX */
+#services {
+  text-align: center;
+}
+
+#services .checkmark-columns {
+  justify-content: center;
+}
+
+/* PAYMENT SECTION FIX */
+#payment {
+  text-align: center;
+}
+
 /* ------------------------------
    NAVIGATION
 ------------------------------ */
@@ -162,7 +175,8 @@ h1.hero-title span {
   color: rgba(255,255,255,0.9);
 }
 
-    .hero-button {
+/* HERO BUTTON */
+.hero-button {
   background-color: #4CAF50;
   color: white;
   padding: 0.75rem 1.5rem;
@@ -178,7 +192,7 @@ h1.hero-title span {
   background-color: #3e9142;
 }
 
-
+/* CTA BUTTON */
 .cta-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -196,7 +210,7 @@ h1.hero-title span {
 }
 
 /* ------------------------------
-   BUTTONS (WhatsApp, Discord)
+   CONTACT BUTTONS
 ------------------------------ */
 
 .whatsapp-button,
@@ -230,7 +244,6 @@ h1.hero-title span {
 
 #testimonials {
   padding: 2rem 1rem;
-  text-align: left;
 }
 
 .testimonial-slider {
@@ -289,6 +302,10 @@ form button[type="submit"]:hover {
   background: #45a049;
 }
 
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
 footer {
   text-align: center;
   padding: 1.5rem 1rem;
@@ -301,14 +318,13 @@ footer p {
 footer .social-icon {
   margin-top: 0.5rem;
   display: inline-block;
-  color: #aaa;           /* keep this */
-  transition: 0.3s ease; /* keep this */
+  color: #aaa;
+  transition: 0.3s ease;
 }
 
 footer .social-icon:hover {
-  color: #4CAF50;        /* keep this */
+  color: #4CAF50;
 }
-
 
 /* ------------------------------
    ANIMATIONS
@@ -328,6 +344,8 @@ footer .social-icon:hover {
 /* ------------------------------
    MEDIA QUERIES
 ------------------------------ */
+
+/* MOBILE */
 @media (max-width: 600px) {
   .main-nav {
     gap: 0.25rem;
@@ -352,14 +370,11 @@ footer .social-icon:hover {
   }
 }
 
-
 /* DESKTOP */
 @media (min-width: 900px) {
   body {
     background-attachment: fixed;
   }
-}
-
 
   .hero-subtitle {
     font-size: 1.6rem;
