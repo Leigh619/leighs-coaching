@@ -1,1 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZEXWTKBMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZEXWTKBMP');
+  </script>
 
+
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.70);
+  /* Dark overlay */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* NAV BASE STYLES */
+  
+  nav {
+  background: #333;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #4CAF50;
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+iframe {
+  height: 1200px;
+  /* Reduce height for smaller screens */
+  max-width: 100%;
+}
+
+
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+section {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: auto;
+}
+  
+  .underline {
+  text-decoration: underline;
+  text-decoration-color: #4CAF50;
+  text-decoration-thickness: 3px;
+  font-size: 21px;
+}
+  
+.lead-magnet {
+  background: #e0f7e9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+  
+footer .social-icon {
+    display: inline-block;
+    margin-top: 10px;
+    color: #aaa; /* default icon color */
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #4CAF50; /* your brand green */
+}
+
+
+h1,
+h2,
+h3 {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #4CAF50;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4CAF50;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+/* Hero Section Styles */
+#hero {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 4rem 1.5rem; /* top/bottom padding */
+  text-align: center;
+  color: white;
+  display: grid;
+  place-items: center; /* fully center vertically and horizontally */
+}
+
+.hero-overlay {
+  background: none;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* for fade-in */
+}
+
+#hero h1 {
+  color: #4CAF50;
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block; /* allow natural wrapping */
+  word-break: break-word; /* prevents overflow */
+  overflow-wrap: break-word
+}
+
+#hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+}
+
+.hero-button:hover {
+  background-color: #3e9142;
+}
+
+@media screen and (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 64px;
+    font-size: 0.95rem;
+  }
+}
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .hero-overlay {
+    padding: 2rem 1.5rem;
+  }
+}
+
+  #hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-overlay {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  /* Start hidden */
+}
+
+.AFN-logo {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  display: block;
+}
+
+
+  /* Base Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0e0e0e;
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+    background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+  }
+
+
+
+  /* Section Headings */
+
+
+  /* Iframe */
+  iframe {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    height: 1655px;
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  /* Back Link */
+  .back-link {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+
+  /* Responsive Layout */
+ 
+   
+
+    iframe {
+      height: 1200px;
+      max-width: 100%;
+    }
+
+    .dropdown-toggle {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+
+    .dropdown-content {
+      font-size: 0.95rem;
+    }
+  }
+
+
+.logo-row {
+  display: flex;
+  gap: 20px; /* space between images */
+  align-items: center;
+  justify-content: center; /* optional */
+}
+
+.AFN-logo {
+  width: 150px; /* adjust to your design */
+  height: auto;
+}
+
+ #philosophy {
+ #philosophy {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+.philosophy-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-left: 4px solid #4CAF50;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+}
+
+.philosophy-item h3 {
+  margin-top: 0;
+  color: #4CAF50;
+  font-size: 1.6rem;
+}
+
+.philosophy-item p {
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+}
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K44KC62Z75"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K44KC62Z75');
+    
+</script>
+</head>
+
+  <body>
+<nav>
+  <a href="/">Home</a>
+  <a href="/#services">Services</a>
+  <a href="/#testimonials">Testimonials</a>
+  <a href="/apply.html">Apply</a>
+  <a href="/#contact">Contact</a>
+</nav>
+    
+  <section id="about">
+  <h2>About Me – Online Fitness Coach & Nutritionist</h2>
+  <p>I’m Leigh, a fitness coach who is very much into the science behind nutrition, hypertrophy (building muscle) and health with a huge passion for helping others achieve their goals.  Whether this be general fat loss, building muscle, improving sports performance and general health. My mission is to help people realise that they can do anything as long as if they employ the right strategies.</p>
+
+<p> My journey started as a runner at the age of 5-years old. I participated at the top level in the United Kingdom, racing all around England, setting local records in events like 5,000m for my age group in my teenage years. However, I stopped running due to injuries that I developed, and instead I started lifting weights because I wanted to bulk up and build muscle. Initially, I found this hard, but after some discipline (gained from my athletic background). I learned to understand what works and what didn't work, suddenly I made some rapid progress. </p>
+
+<p> Later, I went to university to study Biomedical science in the pursuit to become a cancer researcher, as I had a keen passion for helping others and massive interest in cancer research. After graduating, I realised I wasn't so keen on working in a lab so I wanted to help to prevent cancer via raising awareness about the importance of nutrition. On top of this, nutrition helped me build lots of muscle, and it was the biggest issue for me when it came to making progress in the gym. Once I understood it, I was able to make that rapid progress that I described earlier. This lead me to doing my Master's degree in Sports Nutrition to become a qualified nutritionist. </p>
+
+<p> Since graduating with both degrees, I have been coaching people to success in the pursuit of their goals. Teaching them what works, and what doesn't based on my own experiences and scientific understanding. My approach is holistic, which combines coaching training, nutrition, sleep, mindset, and health into one to produce sustainable long term results that last a lifetime. </p>
+
+   <p class="underline">My Achievements</p>
+    <p>🏆MSc Sports Nutrition, with Association for Nutrition Accreditation</p>
+    <p>🏆BSc Biomedical Science with Institue for Biomedical Science Accreditation</p>
+    <p>🏆Park run record holder</p>
+    <p>🏆National level endurance athlete</p>
+  </section>
+
+<section id="philosophy">
+  <h2>My Coaching Philosophy</h2>
+
+  <div class="philosophy-item">
+    <h3>🤝 Honesty</h3>
+    <p>I believe honesty between coach and client is essential. It keeps communication clear, builds trust, and creates the accountability needed for long‑term success.</p>
+  </div>
+
+  <div class="philosophy-item">
+    <h3>🎓 Education</h3>
+    <p>My goal is to teach you how training, nutrition, and the human body actually work. When you understand the “why” behind your plan, you become more independent, confident, and consistent.</p>
+  </div>
+
+  <div class="philosophy-item">
+    <h3>✨ Clarity</h3>
+    <p>Clear communication ensures we’re always aligned. When expectations and goals are understood on both sides, the entire process becomes smoother and more effective.</p>
+  </div>
+
+  <div class="philosophy-item">
+    <h3>🎯 Realism</h3>
+    <p>Setting realistic goals protects your mindset and keeps progress sustainable. Realistic targets build momentum, confidence, and long‑term adherence.</p>
+  </div>
+
+  <div class="philosophy-item">
+    <h3>🧬 Evidence‑Based Practice</h3>
+    <p>Everything I coach is grounded in current scientific evidence. No fads, no guesswork — just proven methods tailored to your goals.</p>
+  </div>
+</section>
+</html>
