@@ -163,15 +163,16 @@ section p {
 /* ------------------------------
    NAVIGATION
 ------------------------------ */
-
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #333;
-  width: 100%;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(6px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
 }
 
 .main-nav {
@@ -204,15 +205,19 @@ nav {
 ------------------------------ */
 
 #hero {
-  position: relative;
-  min-height: 100vh;
-  padding: 4rem 1.5rem;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
-  background-size: cover;
-  background-position: 40% center;
+    position: relative;
+    min-height: 100vh;
+
+    /* Push content below navbar */
+    padding: 8rem 1.5rem 4rem;
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+    background-size: cover;
+    background-position: center;
 }
 
 #hero::before {
