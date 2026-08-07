@@ -137,24 +137,42 @@ section p {
 }
 
 /* SERVICES ALIGNMENT FIX */
-#services {
-  text-align: center;
-}
 
-#services .checkmark-columns {
+    /* Two-column layout */
+.checkmark-columns {
+  display: flex;
   justify-content: center;
-  gap: 3rem; /* spacing between columns */
+  gap: 3rem; /* space between columns */
+  margin-top: 2rem;
 }
 
-#services ul {
-  text-align: left; /* fixes weird centered bullet text */
-  margin: 0 auto;
+/* Remove default bullets */
+.checkmark-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-#services li {
-  margin-bottom: 1rem; /* cleaner spacing */
+/* Checkmark styling */
+.checkmark-columns li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fff; /* adjust if your text is dark */
 }
 
+/* Green checkmark icon */
+.checkmark-columns li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #4CAF50; /* your signature green */
+  font-weight: bold;
+  font-size: 20px;
+}
 /* PAYMENT SECTION FIX */
 #payment {
   text-align: center;
