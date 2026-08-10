@@ -78,9 +78,6 @@ section p {
   text-align: center;
 }
 
-#services .checkmark-columns {
-  justify-content: center;
-}
 
 /* PAYMENT SECTION FIX */
 #payment {
@@ -451,20 +448,46 @@ footer .social-icon:hover {
     padding: 0.5rem 0.5rem;
   }
 
-  .checkmark-columns {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .checkmark-columns li {
-    font-size: 16px;
-    padding-left: 1.8rem;
-  }
-
-  .checkmark-columns li::before {
-    font-size: 18px;
-  }
+  /* TWO-COLUMN CHECKMARK SECTION */
+#services .checkmark-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem; /* more space between columns */
+  flex-wrap: wrap; /* keeps layout responsive */
+  margin-top: 2rem;
 }
+
+/* Remove default bullets */
+#services .checkmark-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 320px; /* keeps columns consistent and prevents collapsing */
+  text-align: left;
+}
+
+/* Checkmark styling */
+#services .checkmark-columns li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.6rem; /* increased spacing between bullets */
+  font-size: 18px;
+  line-height: 1.7; /* more breathing room inside each bullet */
+  color: #fff;
+}
+
+/* Green checkmark icon */
+#services .checkmark-columns li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 
 
 
