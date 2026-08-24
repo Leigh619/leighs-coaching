@@ -94,10 +94,10 @@
 
 
   /* ------------------------------
-     PROGRESS
+     
   ------------------------------ */
 
-  .progress {
+  . {
     position: sticky;
 
     top: 0;
@@ -107,7 +107,9 @@
     background: rgba(0, 0, 0, 0.65);
 
     padding: 12px 0;
-
+    
+    padding-left: 1rem;
+    
     margin-bottom: 20px;
 
     backdrop-filter: blur(5px);
@@ -553,8 +555,8 @@
 
       <div class="question">
         <label>
-          <input type="checkbox" data-item="progress">
-          <span>I'm putting in effort but I'm not seeing the progress I'd like.</span>
+          <input type="checkbox" data-item="">
+          <span>I'm putting in effort but I'm not seeing the  I'd like.</span>
         </label>
       </div>
 
@@ -640,8 +642,8 @@
       '#questions input[type="checkbox"]'
     );
 
-    const progressCount = document.getElementById('progressCount');
-    const progressFill = document.getElementById('progressFill');
+    const Count = document.getElementById('Count');
+    const Fill = document.getElementById('Fill');
 
     const thresholdMessage =
       document.getElementById('thresholdMessage');
@@ -704,10 +706,10 @@
 
       const percentage = (score / total) * 100;
 
-      progressCount.textContent =
+      Count.textContent =
         `${score} / ${total}`;
 
-      progressFill.style.width =
+      Fill.style.width =
         `${percentage}%`;
 
 
@@ -792,7 +794,7 @@
       } else if (score <= 5) {
 
         resultMessage.textContent =
-          "There are a few areas that could be holding you back. A more personalised approach may help you make better progress.";
+          "There are a few areas that could be holding you back. A more personalised approach may help you make better .";
 
       } else if (score <= 7) {
 
