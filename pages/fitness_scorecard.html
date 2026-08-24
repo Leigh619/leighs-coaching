@@ -7,189 +7,782 @@
   <title>Fitness Scorecard | Leigh's Coaching</title>
   <meta name="description" content="Take the Fitness Scorecard to see how your nutrition, energy, sleep, exercise and daily habits are supporting your health and fitness.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  /* =========================================================
+   FIT BY LEIGH — FITNESS SCORECARD
+   ========================================================= */
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7f4;
-      color: #222;
-      line-height: 1.6;
-    }
+/* ------------------------------
+   GLOBAL
+------------------------------ */
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    .scorecard-container {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 60px 20px 80px;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .intro {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  color: #fff;
 
-    .intro h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+  background-image:
+    url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
 
-    .intro p {
-      max-width: 650px;
-      margin: 0 auto;
-      font-size: 1.15rem;
-      color: #555;
-    }
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 
-    .progress {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #f7f7f4;
-      padding: 15px 0;
-      margin-bottom: 25px;
-    }
+  min-height: 100vh;
+}
 
-    .progress-text {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
+/* Dark overlay */
 
-    .progress-bar {
-      height: 8px;
-      background: #ddd;
-      border-radius: 20px;
-      overflow: hidden;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
 
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: #222;
-      transition: width 0.3s ease;
-    }
+  background: rgba(0, 0, 0, 0.40);
 
-    .questions {
-      display: grid;
-      gap: 15px;
-    }
+  z-index: -1;
+  pointer-events: none;
+}
 
-    .question {
-      background: white;
-      border-radius: 14px;
-      padding: 20px;
-      border: 2px solid transparent;
-      transition: all 0.2s ease;
-    }
 
-    .question:hover {
-      border-color: #ddd;
-    }
+/* ------------------------------
+   MAIN CONTAINER
+------------------------------ */
 
-    .question label {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      cursor: pointer;
-      font-size: 1.05rem;
-    }
+.scorecard-container {
+  width: 100%;
+  max-width: 900px;
 
-    .question input {
-      width: 22px;
-      height: 22px;
-      margin-top: 2px;
-      flex-shrink: 0;
-      cursor: pointer;
-    }
+  margin: 0 auto;
 
-    .results {
-      display: none;
-      margin-top: 50px;
-      background: white;
-      border-radius: 20px;
-      padding: 35px;
-      text-align: center;
-    }
+  padding: 7rem 1.25rem 5rem;
+}
 
-    .results.show {
-      display: block;
-    }
 
-    .score {
-      font-size: 4rem;
-      font-weight: bold;
-      line-height: 1;
-      margin: 15px 0;
-    }
+/* ------------------------------
+   INTRO / HERO
+------------------------------ */
 
-    .result-message {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      color: #555;
-    }
+.scorecard-intro {
+  text-align: center;
+  max-width: 800px;
 
-    .cta-button {
-      display: inline-block;
-      padding: 16px 30px;
-      border-radius: 50px;
-      background: #222;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
+  margin: 0 auto 3rem;
 
-    .cta-button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
+  animation: fadeInUp 0.8s ease-out;
+}
 
-    .reset-button {
-      display: block;
-      margin: 20px auto 0;
-      border: none;
-      background: none;
-      text-decoration: underline;
-      cursor: pointer;
-      color: #666;
-    }
+.scorecard-intro h1 {
+  margin: 0 0 1.25rem;
 
-    .threshold-message {
-      display: none;
-      margin-top: 30px;
-      padding: 25px;
-      border-radius: 15px;
-      background: #f0f0eb;
-      text-align: center;
-    }
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
 
-    .threshold-message.show {
-      display: block;
-    }
+  font-weight: 800;
 
-    .threshold-message h2 {
-      margin-top: 0;
-    }
+  line-height: 1.05;
 
-    @media (max-width: 600px) {
-      .scorecard-container {
-        padding-top: 40px;
-      }
+  letter-spacing: -0.02em;
+}
 
-      .question {
-        padding: 17px;
-      }
+.scorecard-intro h1 span {
+  color: #4CAF50;
+}
 
-      .results {
-        padding: 25px 20px;
-      }
-    }
+.scorecard-intro p {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 1.1rem;
+
+  line-height: 1.7;
+}
+
+
+/* ------------------------------
+   INTRO BADGE
+------------------------------ */
+
+.scorecard-badge {
+  display: inline-block;
+
+  margin-bottom: 1.25rem;
+
+  padding: 0.45rem 1rem;
+
+  border: 1px solid rgba(76, 175, 80, 0.7);
+
+  border-radius: 50px;
+
+  color: #4CAF50;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ------------------------------
+   PROGRESS AREA
+------------------------------ */
+
+.scorecard-progress {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  margin-bottom: 1.5rem;
+
+  padding: 1rem 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scorecard-progress-inner {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 0 1.25rem;
+}
+
+.progress-text {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 0.5rem;
+
+  color: #fff;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+}
+
+.progress-count {
+  color: #4CAF50;
+}
+
+.progress-bar {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progress-fill {
+  width: 0;
+
+  height: 100%;
+
+  border-radius: 50px;
+
+  background: #4CAF50;
+
+  transition: width 0.35s ease;
+}
+
+
+/* ------------------------------
+   QUESTIONS
+------------------------------ */
+
+.scorecard-questions {
+  display: grid;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+
+/* Individual question */
+
+.scorecard-question {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 12px;
+
+  background: rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(5px);
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.scorecard-question:hover {
+  border-color: rgba(76, 175, 80, 0.7);
+
+  background: rgba(0, 0, 0, 0.58);
+
+  transform: translateY(-2px);
+}
+
+
+/* Selected question */
+
+.scorecard-question.selected {
+  border-color: #4CAF50;
+
+  background: rgba(76, 175, 80, 0.12);
+}
+
+
+/* Question label */
+
+.scorecard-question label {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  width: 100%;
+
+  padding: 1.25rem;
+
+  cursor: pointer;
+
+  color: #fff;
+
+  font-size: 1.05rem;
+
+  line-height: 1.5;
+}
+
+
+/* ------------------------------
+   CUSTOM CHECKBOX
+------------------------------ */
+
+.scorecard-question input[type="checkbox"] {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* Custom checkbox */
+
+.checkbox-visual {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 25px;
+
+  width: 25px;
+
+  height: 25px;
+
+  margin-top: 1px;
+
+  border: 2px solid rgba(255, 255, 255, 0.65);
+
+  border-radius: 6px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Checkmark */
+
+.checkbox-visual::after {
+  content: "✓";
+
+  color: #fff;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  opacity: 0;
+
+  transform: scale(0.5);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Checked state */
+
+.scorecard-question input[type="checkbox"]:checked
++ .checkbox-visual {
+  border-color: #4CAF50;
+
+  background: #4CAF50;
+
+  transform: scale(1.05);
+}
+
+.scorecard-question input[type="checkbox"]:checked
++ .checkbox-visual::after {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+/* Keyboard accessibility */
+
+.scorecard-question input[type="checkbox"]:focus-visible
++ .checkbox-visual {
+  outline: 3px solid rgba(76, 175, 80, 0.5);
+
+  outline-offset: 3px;
+}
+
+
+/* ------------------------------
+   QUESTION TEXT
+------------------------------ */
+
+.question-text {
+  flex: 1;
+}
+
+.question-number {
+  display: block;
+
+  margin-bottom: 0.25rem;
+
+  color: #4CAF50;
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ------------------------------
+   THRESHOLD MESSAGE
+------------------------------ */
+
+.threshold-message {
+  display: none;
+
+  margin-top: 2rem;
+
+  padding: 2rem;
+
+  text-align: center;
+
+  border: 1px solid rgba(76, 175, 80, 0.65);
+
+  border-radius: 15px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  backdrop-filter: blur(8px);
+
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.threshold-message.show {
+  display: block;
+}
+
+.threshold-message h2 {
+  margin: 0 0 0.75rem;
+
+  color: #4CAF50;
+
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.threshold-message p {
+  max-width: 650px;
+
+  margin: 0 auto 1.5rem;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  line-height: 1.7;
+}
+
+
+/* ------------------------------
+   SEE MY SCORE BUTTON
+------------------------------ */
+
+.scorecard-submit {
+  display: block;
+
+  width: 100%;
+
+  margin: 2rem auto 0;
+
+  padding: 1rem 1.5rem;
+
+  border: 2px solid #4CAF50;
+
+  border-radius: 8px;
+
+  background: #4CAF50;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 1.05rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.scorecard-submit:hover {
+  background: #3e9142;
+
+  border-color: #3e9142;
+
+  transform: translateY(-2px);
+}
+
+.scorecard-submit:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* ------------------------------
+   RESULTS
+------------------------------ */
+
+.scorecard-results {
+  display: none;
+
+  margin-top: 3rem;
+
+  padding: 2.5rem 2rem;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 18px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  backdrop-filter: blur(10px);
+
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.scorecard-results.show {
+  display: block;
+}
+
+
+/* Result heading */
+
+.scorecard-results h2 {
+  margin: 0 0 1rem;
+
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+}
+
+
+/* Score */
+
+.scorecard-score {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  gap: 0.2rem;
+
+  margin: 1.5rem 0;
+}
+
+.scorecard-score-number {
+  color: #4CAF50;
+
+  font-size: clamp(4rem, 15vw, 7rem);
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.scorecard-score-total {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 1.5rem;
+}
+
+
+/* Result title */
+
+.scorecard-result-title {
+  margin-bottom: 0.75rem;
+
+  color: #4CAF50;
+
+  font-size: 1.4rem;
+
+  font-weight: 700;
+}
+
+
+/* Result description */
+
+.scorecard-result-message {
+  max-width: 650px;
+
+  margin: 0 auto 2rem;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  line-height: 1.7;
+}
+
+
+/* ------------------------------
+   CTA BUTTON
+------------------------------ */
+
+.scorecard-cta {
+  display: inline-block;
+
+  padding: 0.85rem 1.7rem;
+
+  border: 2px solid #4CAF50;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #4CAF50;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.scorecard-cta:hover {
+  background: #fff;
+
+  color: #4CAF50;
+
+  transform: translateY(-2px);
+}
+
+
+/* ------------------------------
+   RESET BUTTON
+------------------------------ */
+
+.scorecard-reset {
+  display: block;
+
+  margin: 1.25rem auto 0;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.scorecard-reset:hover {
+  color: #4CAF50;
+}
+
+
+/* ------------------------------
+   SMALL DISCLAIMER
+------------------------------ */
+
+.scorecard-disclaimer {
+  max-width: 650px;
+
+  margin: 2rem auto 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 0.8rem;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* ------------------------------
+   ANIMATION
+------------------------------ */
+
+@keyframes fadeInUp {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width: 600px) {
+
+  .scorecard-container {
+    padding: 6rem 1rem 4rem;
+  }
+
+  .scorecard-intro {
+    margin-bottom: 2rem;
+  }
+
+  .scorecard-intro h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .scorecard-intro p {
+    font-size: 1rem;
+  }
+
+  .scorecard-progress {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .scorecard-progress-inner {
+    padding: 0 1rem;
+  }
+
+  .scorecard-question label {
+    padding: 1rem;
+
+    font-size: 0.98rem;
+  }
+
+  .threshold-message {
+    padding: 1.5rem 1.1rem;
+  }
+
+  .scorecard-results {
+    padding: 2rem 1.25rem;
+  }
+
+}
+
+
+/* ------------------------------
+   TABLET / DESKTOP
+------------------------------ */
+
+@media (min-width: 900px) {
+
+  body {
+    background-attachment: fixed;
+  }
+
+  .scorecard-container {
+    padding-top: 8rem;
+  }
+
+  .scorecard-question label {
+    padding: 1.4rem 1.5rem;
+  }
+
+  .scorecard-submit {
+    max-width: 450px;
+  }
+
   </style>
 </head>
 
