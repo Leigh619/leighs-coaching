@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fitness Scorecard | Leigh's Coaching</title>
+  <meta name="description" content="Take the Fitness Scorecard to see how your nutrition, energy, sleep, exercise and daily habits are supporting your health and fitness.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f4;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .scorecard-container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .intro h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: #555;
+    }
+
+    .progress {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f7f7f4;
+      padding: 15px 0;
+      margin-bottom: 25px;
+    }
+
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: #222;
+      transition: width 0.3s ease;
+    }
+
+    .questions {
+      display: grid;
+      gap: 15px;
+    }
+
+    .question {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .question:hover {
+      border-color: #ddd;
+    }
+
+    .question label {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+
+    .question input {
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .results {
+      display: none;
+      margin-top: 50px;
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .results.show {
+      display: block;
+    }
+
+    .score {
+      font-size: 4rem;
+      font-weight: bold;
+      line-height: 1;
+      margin: 15px 0;
+    }
+
+    .result-message {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #555;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 16px 30px;
+      border-radius: 50px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .reset-button {
+      display: block;
+      margin: 20px auto 0;
+      border: none;
+      background: none;
+      text-decoration: underline;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .threshold-message {
+      display: none;
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 15px;
+      background: #f0f0eb;
+      text-align: center;
+    }
+
+    .threshold-message.show {
+      display: block;
+    }
+
+    .threshold-message h2 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 600px) {
+      .scorecard-container {
+        padding-top: 40px;
+      }
+
+      .question {
+        padding: 17px;
+      }
+
+      .results {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="scorecard-container">
+
+    <section class="intro">
+      <h1>How Healthy Is Your Lifestyle Right Now?</h1>
+
+      <p>
+        Take our quick Fitness Scorecard to see how your nutrition,
+        energy, sleep, exercise and daily habits are supporting you.
+      </p>
+    </section>
+
+
+    <section class="progress" aria-label="Scorecard progress">
+
+      <div class="progress-text">
+        <span>Your scorecard</span>
+        <span id="progressCount">0 / 10</span>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+    </section>
+
+
+    <section class="questions" id="questions">
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="energy_crash">
+          <span>I regularly experience an afternoon energy crash.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="food_cravings">
+          <span>I often struggle with cravings or feeling hungry between meals.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="poor_sleep">
+          <span>I don't consistently get good-quality sleep.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="low_energy">
+          <span>I often feel low on energy during the day.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="inconsistent_exercise">
+          <span>I struggle to stay consistent with exercise.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="poor_nutrition">
+          <span>I find it difficult to maintain a balanced diet.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="stress">
+          <span>Stress regularly affects my eating, exercise or recovery.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="motivation">
+          <span>I struggle to stay motivated when trying to improve my health.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="progress">
+          <span>I'm putting in effort but I'm not seeing the progress I'd like.</span>
+        </label>
+      </div>
+
+      <div class="question">
+        <label>
+          <input type="checkbox" data-item="guidance">
+          <span>I'd benefit from having someone help me create a clear plan.</span>
+        </label>
+      </div>
+
+    </section>
+
+
+    <section
+      class="threshold-message"
+      id="thresholdMessage"
+      aria-live="polite"
+    >
+
+      <h2>Your results are starting to tell a story.</h2>
+
+      <p>
+        You've identified several areas that could be holding you back.
+        Personalised coaching could help you understand what's getting
+        in the way and create a plan that works for you.
+      </p>
+
+      <a
+        href="../apply.html"
+        class="cta-button"
+        id="consultationButton"
+      >
+        Book a Consultation
+      </a>
+
+    </section>
+
+
+    <section class="results" id="results">
+
+      <h2>Your Fitness Score</h2>
+
+      <div class="score">
+        <span id="finalScore">0</span>/10
+      </div>
+
+      <p id="resultMessage" class="result-message"></p>
+
+      <a
+        href="../apply.html"
+        class="cta-button"
+        id="resultsConsultationButton"
+      >
+        Book a Consultation
+      </a>
+
+      <button
+        type="button"
+        class="reset-button"
+        id="resetButton"
+      >
+        Retake the Scorecard
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    /*
+     * FITNESS SCORECARD
+     * -----------------
+     * This controls:
+     * - checkbox counting
+     * - score calculation
+     * - threshold message
+     * - GA4 tracking
+     */
+
+    const checkboxes = document.querySelectorAll(
+      '#questions input[type="checkbox"]'
+    );
+
+    const progressCount = document.getElementById('progressCount');
+    const progressFill = document.getElementById('progressFill');
+
+    const thresholdMessage =
+      document.getElementById('thresholdMessage');
+
+    const results =
+      document.getElementById('results');
+
+    const finalScore =
+      document.getElementById('finalScore');
+
+    const resultMessage =
+      document.getElementById('resultMessage');
+
+    const resetButton =
+      document.getElementById('resetButton');
+
+    let thresholdReached = false;
+
+
+    /*
+     * GA4 helper
+     *
+     * If Google Analytics is installed on the site,
+     * this sends the event to GA4.
+     */
+
+    function sendGA4Event(eventName, parameters = {}) {
+
+      if (typeof gtag === 'function') {
+
+        gtag('event', eventName, parameters);
+
+      }
+
+    }
+
+
+    /*
+     * Count selected answers
+     */
+
+    function getScore() {
+
+      return document.querySelectorAll(
+        '#questions input[type="checkbox"]:checked'
+      ).length;
+
+    }
+
+
+    /*
+     * Update the page whenever a checkbox is clicked
+     */
+
+    function updateScore() {
+
+      const score = getScore();
+
+      const total = checkboxes.length;
+
+      const percentage = (score / total) * 100;
+
+      progressCount.textContent =
+        `${score} / ${total}`;
+
+      progressFill.style.width =
+        `${percentage}%`;
+
+
+      /*
+       * Show the high-priority message
+       * once the visitor reaches 3 checks.
+       */
+
+      if (score >= 3 && !thresholdReached) {
+
+        thresholdReached = true;
+
+        thresholdMessage.classList.add('show');
+
+        sendGA4Event(
+          'audit_threshold_reached',
+          {
+            threshold: 3,
+            item_count: score,
+            scorecard_name: 'fitness_scorecard'
+          }
+        );
+
+      }
+
+
+      /*
+       * Update the live score if the
+       * visitor has completed the scorecard.
+       */
+
+      if (score === total) {
+
+        showResults();
+
+      }
+
+    }
+
+
+    /*
+     * Track individual checkbox clicks
+     */
+
+    checkboxes.forEach(function (checkbox) {
+
+      checkbox.addEventListener('change', function () {
+
+        const score = getScore();
+
+        sendGA4Event(
+          'audit_checkbox_click',
+          {
+            item_id: checkbox.dataset.item,
+            item_count: score,
+            scorecard_name: 'fitness_scorecard'
+          }
+        );
+
+        updateScore();
+
+      });
+
+    });
+
+
+    /*
+     * Show final score
+     */
+
+    function showResults() {
+
+      const score = getScore();
+
+      finalScore.textContent = score;
+
+      if (score <= 2) {
+
+        resultMessage.textContent =
+          "You're doing well across many areas. Keep building on those positive habits and focus on the areas you'd like to improve.";
+
+      } else if (score <= 5) {
+
+        resultMessage.textContent =
+          "There are a few areas that could be holding you back. A more personalised approach may help you make better progress.";
+
+      } else if (score <= 7) {
+
+        resultMessage.textContent =
+          "You've identified several areas worth addressing. Personalised coaching could help you create a clearer and more sustainable plan.";
+
+      } else {
+
+        resultMessage.textContent =
+          "You've identified quite a few areas that could be improved. This is exactly where personalised coaching can make a difference.";
+
+      }
+
+      results.classList.add('show');
+
+      sendGA4Event(
+        'fitness_scorecard_completed',
+        {
+          score: score,
+          scorecard_name: 'fitness_scorecard'
+        }
+      );
+
+    }
+
+
+    /*
+     * Track consultation clicks
+     */
+
+    document
+      .querySelectorAll('.cta-button')
+      .forEach(function (button) {
+
+        button.addEventListener('click', function () {
+
+          sendGA4Event(
+            'consultation_click',
+            {
+              score: getScore(),
+              scorecard_name: 'fitness_scorecard'
+            }
+          );
+
+        });
+
+      });
+
+
+    /*
+     * Reset the scorecard
+     */
+
+    resetButton.addEventListener('click', function () {
+
+      checkboxes.forEach(function (checkbox) {
+
+        checkbox.checked = false;
+
+      });
+
+      thresholdReached = false;
+
+      thresholdMessage.classList.remove('show');
+
+      results.classList.remove('show');
+
+      updateScore();
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
