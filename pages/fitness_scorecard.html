@@ -46,8 +46,30 @@
     z-index: -1;
     pointer-events: none;
   }
+/*Navigation*/
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #4CAF50;
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
 
 
+  
   /* ------------------------------
      MAIN CONTAINER
   ------------------------------ */
