@@ -460,7 +460,8 @@
     .question {
       padding: 15px 20px;
     }
-
+  }
+  
 </style>
 
 </head>
@@ -640,8 +641,8 @@
       '#questions input[type="checkbox"]'
     );
 
-    const Count = document.getElementById('Count');
-    const Fill = document.getElementById('Fill');
+    const Count = document.getElementById('progressCount');
+    const Fill = document.getElementById('progressFill');
 
     const thresholdMessage =
       document.getElementById('thresholdMessage');
@@ -704,10 +705,10 @@
 
       const percentage = (score / total) * 100;
 
-      Count.textContent =
+      progressCount.textContent =
         `${score} / ${total}`;
 
-      Fill.style.width =
+      progressFill.style.width =
         `${percentage}%`;
 
 
