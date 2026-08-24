@@ -8,9 +8,18 @@
   <meta name="description" content="Take the Fitness Scorecard to see how your nutrition, energy, sleep, exercise and daily habits are supporting your health and fitness.">
 
 <style>
+  /* =========================================================
+     FIT BY LEIGH — FITNESS SCORECARD
+     ========================================================= */
+
   * {
     box-sizing: border-box;
   }
+
+
+  /* ------------------------------
+     GLOBAL
+  ------------------------------ */
 
   body {
     margin: 0;
@@ -24,57 +33,97 @@
     line-height: 1.6;
   }
 
+
   /* Dark overlay */
+
   body::before {
     content: "";
     position: fixed;
     inset: 0;
+
     background: rgba(0, 0, 0, 0.30);
+
     z-index: -1;
     pointer-events: none;
   }
 
+
+  /* ------------------------------
+     MAIN CONTAINER
+  ------------------------------ */
+
   .scorecard-container {
     max-width: 850px;
+
     margin: 0 auto;
-    padding: 60px 20px 80px;
+
+    padding: 40px 20px 50px;
   }
+
+
+  /* ------------------------------
+     INTRO
+  ------------------------------ */
 
   .intro {
     text-align: center;
-    margin-bottom: 45px;
+
+    margin-bottom: 30px;
   }
 
   .intro h1 {
     font-size: clamp(2.2rem, 5vw, 4rem);
+
     line-height: 1.1;
-    margin-bottom: 20px;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
     color: #fff;
   }
 
   .intro p {
     max-width: 650px;
+
     margin: 0 auto;
+
     font-size: 1.15rem;
+
     color: rgba(255, 255, 255, 0.9);
   }
 
+
+  /* ------------------------------
+     PROGRESS
+  ------------------------------ */
+
   .progress {
     position: sticky;
+
     top: 0;
+
     z-index: 10;
+
     background: rgba(0, 0, 0, 0.65);
-    padding: 15px 0;
-    margin-bottom: 25px;
+
+    padding: 12px 0;
+
+    margin-bottom: 20px;
+
     backdrop-filter: blur(5px);
   }
 
   .progress-text {
     display: flex;
+
     justify-content: space-between;
-    margin-bottom: 8px;
+
+    margin-bottom: 7px;
+
     font-size: 0.9rem;
+
     font-weight: bold;
+
     color: #fff;
   }
 
@@ -84,65 +133,162 @@
 
   .progress-bar {
     height: 8px;
+
     background: rgba(255, 255, 255, 0.25);
+
     border-radius: 20px;
+
     overflow: hidden;
   }
 
   .progress-fill {
     width: 0%;
+
     height: 100%;
+
     background: #4CAF50;
+
+    border-radius: 20px;
+
     transition: width 0.3s ease;
   }
 
+
+  /* ------------------------------
+     QUESTIONS
+  ------------------------------ */
+
   .questions {
     display: grid;
-    gap: 15px;
+
+    gap: 10px;
   }
+
+
+  /* Individual question */
 
   .question {
     background: rgba(0, 0, 0, 0.60);
+
     border-radius: 14px;
-    padding: 20px;
+
+    padding: 15px 20px;
+
     border: 2px solid transparent;
-    transition: all 0.2s ease;
+
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
   }
+
+
+  /* Hover */
 
   .question:hover {
     border-color: #4CAF50;
   }
 
+
+  /* Selected question */
+
+  .question:has(input:checked) {
+    border-color: #4CAF50;
+
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+
+  /* ------------------------------
+     QUESTION TEXT + CHECKBOX
+  ------------------------------ */
+
   .question label {
     display: flex;
+
     align-items: flex-start;
+
     gap: 15px;
+
     cursor: pointer;
+
     font-size: 1.05rem;
+
     color: #fff;
   }
 
   .question input {
     width: 22px;
+
     height: 22px;
+
     margin-top: 2px;
+
     flex-shrink: 0;
+
     cursor: pointer;
+
     accent-color: #4CAF50;
   }
 
-  .question:has(input:checked) {
-    border-color: #4CAF50;
-    background: rgba(0, 0, 0, 0.75);
+
+  /* ------------------------------
+     THRESHOLD MESSAGE
+  ------------------------------ */
+
+  .threshold-message {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.70);
+
+    border: 1px solid rgba(76, 175, 80, 0.6);
+
+    text-align: center;
   }
+
+  .threshold-message.show {
+    display: block;
+  }
+
+  .threshold-message h2 {
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+    color: #4CAF50;
+  }
+
+  .threshold-message p {
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+
+  /* ------------------------------
+     RESULTS
+  ------------------------------ */
 
   .results {
     display: none;
-    margin-top: 50px;
+
+    margin-top: 40px;
+
     background: rgba(0, 0, 0, 0.70);
+
     border: 1px solid rgba(76, 175, 80, 0.5);
+
     border-radius: 20px;
-    padding: 35px;
+
+    padding: 30px;
+
     text-align: center;
   }
 
@@ -154,46 +300,85 @@
     color: #fff;
   }
 
+
+  /* Score */
+
   .score {
     font-size: 4rem;
+
     font-weight: bold;
+
     line-height: 1;
+
     margin: 15px 0;
+
     color: #4CAF50;
   }
 
+
+  /* Result message */
+
   .result-message {
     max-width: 600px;
+
     margin: 0 auto 25px;
+
     color: rgba(255, 255, 255, 0.9);
   }
 
+
+  /* ------------------------------
+     CTA BUTTON
+  ------------------------------ */
+
   .cta-button {
     display: inline-block;
+
     padding: 0.75rem 1.5rem;
+
     border: 2px solid #4CAF50;
+
     border-radius: 8px;
+
     background: #4CAF50;
+
     color: #fff;
+
     text-decoration: none;
+
     font-weight: bold;
+
     transition: 0.3s ease;
   }
 
   .cta-button:hover {
     background: #3e9142;
+
     border-color: #3e9142;
+
     color: #fff;
+
     transform: translateY(-2px);
   }
 
+
+  /* ------------------------------
+     RESET BUTTON
+  ------------------------------ */
+
   .reset-button {
     display: block;
+
     margin: 20px auto 0;
+
     border: none;
+
     background: none;
+
     text-decoration: underline;
+
     cursor: pointer;
+
     color: rgba(255, 255, 255, 0.7);
   }
 
@@ -201,48 +386,81 @@
     color: #4CAF50;
   }
 
-  .threshold-message {
-    display: none;
-    margin-top: 30px;
-    padding: 25px;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.70);
-    border: 1px solid rgba(76, 175, 80, 0.5);
-    text-align: center;
-  }
 
-  .threshold-message.show {
-    display: block;
-  }
-
-  .threshold-message h2 {
-    margin-top: 0;
-    color: #4CAF50;
-  }
-
-  .threshold-message p {
-    color: rgba(255, 255, 255, 0.9);
-  }
+  /* ------------------------------
+     MOBILE
+  ------------------------------ */
 
   @media (max-width: 600px) {
+
     .scorecard-container {
-      padding-top: 40px;
+      padding: 30px 20px 40px;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+    }
+
+    .intro h1 {
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      font-size: 1rem;
+    }
+
+    .progress {
+      padding: 10px 0;
+
+      margin-bottom: 15px;
+    }
+
+    .questions {
+      gap: 8px;
     }
 
     .question {
-      padding: 17px;
+      padding: 14px 16px;
+    }
+
+    .question label {
+      font-size: 1.05rem;
+    }
+
+    .threshold-message {
+      padding: 20px 16px;
     }
 
     .results {
       padding: 25px 20px;
     }
+
   }
 
+
+  /* ------------------------------
+     DESKTOP
+  ------------------------------ */
+
   @media (min-width: 900px) {
+
     body {
       background-attachment: fixed;
     }
-  }
+
+    .scorecard-container {
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+
+    .questions {
+      gap: 10px;
+    }
+
+    .question {
+      padding: 15px 20px;
+    }
+
 </style>
 
 </head>
