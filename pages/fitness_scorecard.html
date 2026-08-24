@@ -8,483 +8,243 @@
   <meta name="description" content="Take the Fitness Scorecard to see how your nutrition, energy, sleep, exercise and daily habits are supporting your health and fitness.">
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1rem;
-  color: #fff;
-
-  background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-
-  min-height: 100vh;
-}
-
-/* Dark overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.30);
-  z-index: -1;
-  pointer-events: none;
-}
-
-
-/* ------------------------------
-   MAIN CONTAINER
------------------------------- */
-
-.scorecard-container {
-  width: 100%;
-  max-width: 900px;
-
-  margin: 0 auto;
-
-  padding: 7rem 1.25rem 5rem;
-}
-
-
-/* ------------------------------
-   INTRO
------------------------------- */
-
-.scorecard-intro {
-  text-align: center;
-  max-width: 800px;
-
-  margin: 0 auto 3rem;
-
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.scorecard-intro h1 {
-  margin: 0 0 1.25rem;
-
-  font-size: clamp(2.2rem, 7vw, 4.5rem);
-
-  font-weight: 800;
-
-  line-height: 1.05;
-
-  letter-spacing: -0.02em;
-}
-
-.scorecard-intro h1 span {
-  color: #4CAF50;
-}
-
-.scorecard-intro p {
-  max-width: 680px;
-
-  margin: 0 auto;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  font-size: 1.1rem;
-
-  line-height: 1.7;
-}
-
-
-
-/* ------------------------------
-   PROGRESS
------------------------------- */
-
-.scorecard-progress {
-  position: sticky;
-
-  top: 0;
-
-  z-index: 100;
-
-  margin-bottom: 1.5rem;
-
-  padding: 1rem 0;
-
-  background: rgba(0, 0, 0, 0.55);
-
-  backdrop-filter: blur(10px);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-  .scorecard-progress-inner {
-  max-width: 900px;
-
-  margin: 0 auto;
-
-  padding: 0 1.25rem;
-}
-
-.progress-text {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 0.5rem;
-
-  color: #fff;
-
-  font-size: 0.9rem;
-
-  font-weight: 700;
-}
-
-.progress-count {
-  color: #4CAF50;
-}
-
-.progress-bar {
-  width: 100%;
-
-  height: 8px;
-
-  overflow: hidden;
-
-  border-radius: 50px;
-
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.progress-fill {
-  width: 0;
-
-  height: 100%;
-
-  border-radius: 50px;
-
-  background: #4CAF50;
-
-  transition: width 0.35s ease;
-}
-
-
-
-/* ------------------------------
-   QUESTIONS
------------------------------- */
-
-.scorecard-questions {
-  display: grid;
-  gap: 15px;
-}
-
-
-/* Question card */
-
-.scorecard-question {
-  background: rgba(0, 0, 0, 0.55);
-
-  border-radius: 14px;
-
-  padding: 20px;
-
-  border: 2px solid transparent;
-
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
-}
-
-
-/* Hover */
-
-.scorecard-question:hover {
-  border-color: rgba(76, 175, 80, 0.65);
-}
-
-
-/* Selected */
-
-.scorecard-question.selected {
-  border-color: #4CAF50;
-
-  background: rgba(0, 0, 0, 0.65);
-}
-
-
-/* ------------------------------
-   QUESTION LABEL
------------------------------- */
-
-.scorecard-question label {
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 15px;
-
-  cursor: pointer;
-
-  font-size: 1.05rem;
-
-  line-height: 1.6;
-
-  color: #fff;
-}
-
-
-/* ------------------------------
-   CHECKBOX
------------------------------- */
-
-.scorecard-question input[type="checkbox"] {
-  width: 22px;
-  height: 22px;
-
-  margin-top: 2px;
-
-  flex-shrink: 0;
-
-  cursor: pointer;
-
-  accent-color: #4CAF50;
-}
-
-
-/* ------------------------------
-   THRESHOLD MESSAGE
------------------------------- */
-
-.threshold-message {
-  display: none;
-
-  margin-top: 30px;
-
-  padding: 25px;
-
-  border-radius: 15px;
-
-  background: rgba(0, 0, 0, 0.65);
-
-  border: 1px solid rgba(76, 175, 80, 0.65);
-
-  text-align: center;
-
-  animation: fadeInUp 0.5s ease-out;
-}
-
-.threshold-message.show {
-  display: block;
-}
-
-.threshold-message h2 {
-  margin-top: 0;
-
-  color: #4CAF50;
-
-  font-size: 1.7rem;
-}
-
-.threshold-message p {
-  max-width: 650px;
-
-  margin: 0 auto 20px;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  line-height: 1.6;
-}
-
-
-/* ------------------------------
-   RESULTS
------------------------------- */
-
-.scorecard-results {
-  display: none;
-
-  margin-top: 50px;
-
-  background: rgba(0, 0, 0, 0.65);
-
-  border-radius: 20px;
-
-  padding: 35px;
-
-  text-align: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.15);
-
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.scorecard-results.show {
-  display: block;
-}
-
-.scorecard-results h2 {
-  margin-top: 0;
-}
-
-
-/* Score */
-
-.score {
-  font-size: 4rem;
-
-  font-weight: bold;
-
-  line-height: 1;
-
-  margin: 15px 0;
-
-  color: #4CAF50;
-}
-
-
-/* Result text */
-
-.result-message {
-  max-width: 600px;
-
-  margin: 0 auto 25px;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  line-height: 1.6;
-}
-
-
-/* ------------------------------
-   CTA BUTTON
------------------------------- */
-
-.scorecard-cta {
-  display: inline-block;
-
-  padding: 0.75rem 1.5rem;
-
-  border: 2px solid #4CAF50;
-
-  border-radius: 8px;
-
-  color: #4CAF50;
-
-  background: transparent;
-
-  font-weight: bold;
-
-  text-decoration: none;
-
-  transition: 0.3s ease;
-}
-
-.scorecard-cta:hover {
-  background: #fff;
-
-  color: #4CAF50;
-}
-
-
-/* ------------------------------
-   RESET BUTTON
------------------------------- */
-
-.scorecard-reset {
-  display: block;
-
-  margin: 20px auto 0;
-
-  border: none;
-
-  background: none;
-
-  color: rgba(255, 255, 255, 0.7);
-
-  text-decoration: underline;
-
-  cursor: pointer;
-
-  font-family: inherit;
-}
-
-.scorecard-reset:hover {
-  color: #4CAF50;
-}
-
-
-/* ------------------------------
-   ANIMATION
------------------------------- */
-
-@keyframes fadeInUp {
-
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  * {
+    box-sizing: border-box;
   }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-
-/* ------------------------------
-   MOBILE
------------------------------- */
-
-@media (max-width: 600px) {
-
-  .scorecard-container {
-    padding: 40px 20px 60px;
-  }
-
-  .scorecard-intro h1 {
-    font-size: clamp(2.2rem, 10vw, 3rem);
-  }
-
-  .scorecard-intro p {
-    font-size: 1rem;
-  }
-
-  .scorecard-question {
-    padding: 17px;
-  }
-
-  .scorecard-question label {
-    font-size: 1.05rem;
-  }
-
-  .scorecard-results {
-    padding: 25px 20px;
-  }
-
-}
-
-
-/* ------------------------------
-   DESKTOP
------------------------------- */
-
-@media (min-width: 900px) {
 
   body {
-    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('https://github.com/Leigh619/leighs-coaching/blob/main/images/newbg.png?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #fff;
+    line-height: 1.6;
   }
 
-}
+  /* Dark overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.30);
+    z-index: -1;
+    pointer-events: none;
+  }
 
-  </style>
+  .scorecard-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .intro h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .intro p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .progress {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 15px 0;
+    margin-bottom: 25px;
+    backdrop-filter: blur(5px);
+  }
+
+  .progress-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .progress-text span:last-child {
+    color: #4CAF50;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #4CAF50;
+    transition: width 0.3s ease;
+  }
+
+  .questions {
+    display: grid;
+    gap: 15px;
+  }
+
+  .question {
+    background: rgba(0, 0, 0, 0.60);
+    border-radius: 14px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .question:hover {
+    border-color: #4CAF50;
+  }
+
+  .question label {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    color: #fff;
+  }
+
+  .question input {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: #4CAF50;
+  }
+
+  .question:has(input:checked) {
+    border-color: #4CAF50;
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .results {
+    display: none;
+    margin-top: 50px;
+    background: rgba(0, 0, 0, 0.70);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+  }
+
+  .results.show {
+    display: block;
+  }
+
+  .results h2 {
+    color: #fff;
+  }
+
+  .score {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+    margin: 15px 0;
+    color: #4CAF50;
+  }
+
+  .result-message {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #3e9142;
+    border-color: #3e9142;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .reset-button {
+    display: block;
+    margin: 20px auto 0;
+    border: none;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .reset-button:hover {
+    color: #4CAF50;
+  }
+
+  .threshold-message {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.70);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    text-align: center;
+  }
+
+  .threshold-message.show {
+    display: block;
+  }
+
+  .threshold-message h2 {
+    margin-top: 0;
+    color: #4CAF50;
+  }
+
+  .threshold-message p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  @media (max-width: 600px) {
+    .scorecard-container {
+      padding-top: 40px;
+    }
+
+    .question {
+      padding: 17px;
+    }
+
+    .results {
+      padding: 25px 20px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    body {
+      background-attachment: fixed;
+    }
+  }
+</style>
+
 </head>
 
 <body>
